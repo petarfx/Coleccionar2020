@@ -1,0 +1,32 @@
+﻿.amplio {
+    width: 100%;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.btnBuscar {
+    height: 36px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.txtBuscar {
+    height: 35px;
+    vertical-align: bottom;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.espacioTop {
+    padding-top: 10px;
+}
+
+.normalRow {
+    height: 60px;
+}
+
+.middleRow {
+    height: 30px;
+}
