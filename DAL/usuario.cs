@@ -44,6 +44,8 @@ namespace DAL
         public string Clave { get; set; }
         public Nullable<int> ID_Facebook { get; set; }
         public byte Estado { get; set; }
+        public string alias { get; set; }
+        public int ID_Avatar { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<calificacion> calificacion { get; set; }
@@ -59,5 +61,6 @@ namespace DAL
         public virtual ICollection<venta> venta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<venta> venta1 { get; set; }
+        public virtual avatar avatar { get; set; }
     }
 }

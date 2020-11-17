@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="avatar.cs">
+      <DependentUpon>ModelColeccionar.tt</DependentUpon>
+    </Compile>
     <Compile Include="calificacion.cs">
       <DependentUpon>ModelColeccionar.tt</DependentUpon>
     </Compile>

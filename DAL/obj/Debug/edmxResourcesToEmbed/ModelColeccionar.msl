@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ColeccionarModelStoreContainer" CdmEntityContainer="ColeccionarEntities">
+    <EntitySetMapping Name="calificacion">
+      <EntityTypeMapping TypeName="ColeccionarModel.calificacion">
+        <MappingFragment StoreEntitySet="calificacion">
+          <ScalarProperty Name="ID_Calificacion" ColumnName="ID_Calificacion" />
+          <ScalarProperty Name="ID_Venta" ColumnName="ID_Venta" />
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="Calificacion1" ColumnName="Calificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categoria">
+      <EntityTypeMapping TypeName="ColeccionarModel.categoria">
+        <MappingFragment StoreEntitySet="categoria">
+          <ScalarProperty Name="ID_Categoria" ColumnName="ID_Categoria" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="encontrado">
+      <EntityTypeMapping TypeName="ColeccionarModel.encontrado">
+        <MappingFragment StoreEntitySet="encontrado">
+          <ScalarProperty Name="ID_Encontrado" ColumnName="ID_Encontrado" />
+          <ScalarProperty Name="ID_Publicacion" ColumnName="ID_Publicacion" />
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estado">
+      <EntityTypeMapping TypeName="ColeccionarModel.estado">
+        <MappingFragment StoreEntitySet="estado">
+          <ScalarProperty Name="ID_Estado" ColumnName="ID_Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="localidad">
+      <EntityTypeMapping TypeName="ColeccionarModel.localidad">
+        <MappingFragment StoreEntitySet="localidad">
+          <ScalarProperty Name="ID_Localidad" ColumnName="ID_Localidad" />
+          <ScalarProperty Name="ID_Provincia" ColumnName="ID_Provincia" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mensajeria">
+      <EntityTypeMapping TypeName="ColeccionarModel.mensajeria">
+        <MappingFragment StoreEntitySet="mensajeria">
+          <ScalarProperty Name="ID_Mensaje" ColumnName="ID_Mensaje" />
+          <ScalarProperty Name="ID_Remitente" ColumnName="ID_Remitente" />
+          <ScalarProperty Name="ID_Destinatario" ColumnName="ID_Destinatario" />
+          <ScalarProperty Name="ID_Publicacion" ColumnName="ID_Publicacion" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="provincia">
+      <EntityTypeMapping TypeName="ColeccionarModel.provincia">
+        <MappingFragment StoreEntitySet="provincia">
+          <ScalarProperty Name="ID_Provincia" ColumnName="ID_Provincia" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="publicacion">
+      <EntityTypeMapping TypeName="ColeccionarModel.publicacion">
+        <MappingFragment StoreEntitySet="publicacion">
+          <ScalarProperty Name="ID_Publicacion" ColumnName="ID_Publicacion" />
+          <ScalarProperty Name="Tipo_Publicacion" ColumnName="Tipo_Publicacion" />
+          <ScalarProperty Name="ID_Categoria" ColumnName="ID_Categoria" />
+          <ScalarProperty Name="ID_SubCategoria" ColumnName="ID_SubCategoria" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Estado_Publicacion" ColumnName="Estado_Publicacion" />
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Estado_Producto" ColumnName="Estado_Producto" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Estado_Visibilidad" ColumnName="Estado_Visibilidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="publicacionFoto">
+      <EntityTypeMapping TypeName="ColeccionarModel.publicacionFoto">
+        <MappingFragment StoreEntitySet="publicacionFoto">
+          <ScalarProperty Name="ID_PublicacionFoto" ColumnName="ID_PublicacionFoto" />
+          <ScalarProperty Name="ID_Publicacion" ColumnName="ID_Publicacion" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subCategoria">
+      <EntityTypeMapping TypeName="ColeccionarModel.subCategoria">
+        <MappingFragment StoreEntitySet="subCategoria">
+          <ScalarProperty Name="ID_SubCategoria" ColumnName="ID_SubCategoria" />
+          <ScalarProperty Name="ID_Categoria" ColumnName="ID_Categoria" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoPago">
+      <EntityTypeMapping TypeName="ColeccionarModel.tipoPago">
+        <MappingFragment StoreEntitySet="tipoPago">
+          <ScalarProperty Name="ID_TipoPago" ColumnName="ID_TipoPago" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="ColeccionarModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="ID_Avatar" ColumnName="ID_Avatar" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+          <ScalarProperty Name="Fecha_Nac" ColumnName="Fecha_Nac" />
+          <ScalarProperty Name="Domicilio_Lat" ColumnName="Domicilio_Lat" />
+          <ScalarProperty Name="Domicilio_Lon" ColumnName="Domicilio_Lon" />
+          <ScalarProperty Name="Domicilio_Calle" ColumnName="Domicilio_Calle" />
+          <ScalarProperty Name="Domicilio_ID_Provincia" ColumnName="Domicilio_ID_Provincia" />
+          <ScalarProperty Name="Domicilio_ID_Localidad" ColumnName="Domicilio_ID_Localidad" />
+          <ScalarProperty Name="Domicilio_Nro" ColumnName="Domicilio_Nro" />
+          <ScalarProperty Name="Domicilio_Piso" ColumnName="Domicilio_Piso" />
+          <ScalarProperty Name="Domicilio_Depto" ColumnName="Domicilio_Depto" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="ID_Facebook" ColumnName="ID_Facebook" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="venta">
+      <EntityTypeMapping TypeName="ColeccionarModel.venta">
+        <MappingFragment StoreEntitySet="venta">
+          <ScalarProperty Name="ID_Venta" ColumnName="ID_Venta" />
+          <ScalarProperty Name="ID_Publicacion" ColumnName="ID_Publicacion" />
+          <ScalarProperty Name="ID_Vendedor" ColumnName="ID_Vendedor" />
+          <ScalarProperty Name="ID_Comprador" ColumnName="ID_Comprador" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="ID_TipoPago" ColumnName="ID_TipoPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="avatar">
+      <EntityTypeMapping TypeName="ColeccionarModel.avatar">
+        <MappingFragment StoreEntitySet="avatar">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="ID_Avatar" ColumnName="ID_Avatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

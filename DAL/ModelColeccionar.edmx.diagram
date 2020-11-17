@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a99d6cad4e5c474b837f7fdfc8dbb038" Name="Diagram1">
+      <Diagram DiagramId="a99d6cad4e5c474b837f7fdfc8dbb038" Name="Diagram1" ZoomLevel="71">
         <EntityTypeShape EntityType="ColeccionarModel.calificacion" Width="1.5" PointX="7.5" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ColeccionarModel.categoria" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ColeccionarModel.encontrado" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
@@ -39,6 +39,8 @@
         <AssociationConnector Association="ColeccionarModel.FK_venta_tipoPago" ManuallyRouted="false" />
         <AssociationConnector Association="ColeccionarModel.FK_venta_usuario" ManuallyRouted="false" />
         <AssociationConnector Association="ColeccionarModel.FK_venta_usuario1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ColeccionarModel.avatar" Width="1.5" PointX="0.75" PointY="2" />
+        <AssociationConnector Association="ColeccionarModel.FK__usuario__ID_Avat__2EDAF651" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

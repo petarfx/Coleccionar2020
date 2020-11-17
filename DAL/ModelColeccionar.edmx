@@ -4,7 +4,15 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ColeccionarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ColeccionarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="avatar">
+          <Key>
+            <PropertyRef Name="ID_Avatar" />
+          </Key>
+          <Property Name="ID_Avatar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Foto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Estado" Type="tinyint" Nullable="false" />
+        </EntityType>
         <EntityType Name="calificacion">
           <Key>
             <PropertyRef Name="ID_Calificacion" />
@@ -126,6 +134,8 @@
           <Property Name="Clave" Type="varchar" MaxLength="12" Nullable="false" />
           <Property Name="ID_Facebook" Type="int" />
           <Property Name="Estado" Type="tinyint" Nullable="false" />
+          <Property Name="alias" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ID_Avatar" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="venta">
           <Key>
@@ -140,6 +150,18 @@
           <Property Name="Importe" Type="float" Nullable="false" />
           <Property Name="ID_TipoPago" Type="tinyint" Nullable="false" />
         </EntityType>
+        <Association Name="FK__usuario__ID_Avat__2EDAF651">
+          <End Role="avatar" Type="Self.avatar" Multiplicity="1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="avatar">
+              <PropertyRef Name="ID_Avatar" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="ID_Avatar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_calificacion_usuario">
           <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
           <End Role="calificacion" Type="Self.calificacion" Multiplicity="*" />
@@ -393,6 +415,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ColeccionarModelStoreContainer">
+          <EntitySet Name="avatar" EntityType="Self.avatar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="calificacion" EntityType="Self.calificacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="encontrado" EntityType="Self.encontrado" Schema="dbo" store:Type="Tables" />
@@ -406,6 +429,10 @@
           <EntitySet Name="tipoPago" EntityType="Self.tipoPago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="venta" EntityType="Self.venta" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__usuario__ID_Avat__2EDAF651" Association="Self.FK__usuario__ID_Avat__2EDAF651">
+            <End Role="avatar" EntitySet="avatar" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
           <AssociationSet Name="FK_calificacion_usuario" Association="Self.FK_calificacion_usuario">
             <End Role="usuario" EntitySet="usuario" />
             <End Role="calificacion" EntitySet="calificacion" />
@@ -491,8 +518,7 @@
             <End Role="venta" EntitySet="venta" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ColeccionarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -653,6 +679,9 @@
           <NavigationProperty Name="provincia" Relationship="Self.FK_usuario_provincia" FromRole="usuario" ToRole="provincia" />
           <NavigationProperty Name="venta" Relationship="Self.FK_venta_usuario" FromRole="usuario" ToRole="venta" />
           <NavigationProperty Name="venta1" Relationship="Self.FK_venta_usuario1" FromRole="usuario" ToRole="venta" />
+          <Property Name="alias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Avatar" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="avatar" Relationship="ColeccionarModel.FK__usuario__ID_Avat__2EDAF651" FromRole="usuario" ToRole="avatar" />
         </EntityType>
         <EntityType Name="venta">
           <Key>
@@ -1023,7 +1052,33 @@
             <End Role="usuario" EntitySet="usuario" />
             <End Role="venta" EntitySet="venta" />
           </AssociationSet>
+          <EntitySet Name="avatar" EntityType="ColeccionarModel.avatar" />
+          <AssociationSet Name="FK__usuario__ID_Avat__2EDAF651" Association="ColeccionarModel.FK__usuario__ID_Avat__2EDAF651">
+            <End Role="avatar" EntitySet="avatar" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="avatar">
+          <Key>
+            <PropertyRef Name="ID_Avatar" />
+          </Key>
+          <Property Name="ID_Avatar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Foto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="usuario" Relationship="ColeccionarModel.FK__usuario__ID_Avat__2EDAF651" FromRole="avatar" ToRole="usuario" />
+        </EntityType>
+        <Association Name="FK__usuario__ID_Avat__2EDAF651">
+          <End Type="ColeccionarModel.avatar" Role="avatar" Multiplicity="1" />
+          <End Type="ColeccionarModel.usuario" Role="usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="avatar">
+              <PropertyRef Name="ID_Avatar" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="ID_Avatar" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1142,6 +1197,8 @@
           <EntitySetMapping Name="usuario">
             <EntityTypeMapping TypeName="ColeccionarModel.usuario">
               <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="ID_Avatar" ColumnName="ID_Avatar" />
+                <ScalarProperty Name="alias" ColumnName="alias" />
                 <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
                 <ScalarProperty Name="Apellido" ColumnName="Apellido" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
@@ -1175,6 +1232,15 @@
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="Importe" ColumnName="Importe" />
                 <ScalarProperty Name="ID_TipoPago" ColumnName="ID_TipoPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="avatar">
+            <EntityTypeMapping TypeName="ColeccionarModel.avatar">
+              <MappingFragment StoreEntitySet="avatar">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+                <ScalarProperty Name="ID_Avatar" ColumnName="ID_Avatar" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
