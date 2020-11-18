@@ -110,33 +110,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="usuario">
-      <EntityTypeMapping TypeName="ColeccionarModel.usuario">
-        <MappingFragment StoreEntitySet="usuario">
-          <ScalarProperty Name="ID_Avatar" ColumnName="ID_Avatar" />
-          <ScalarProperty Name="alias" ColumnName="alias" />
-          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
-          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="Dni" ColumnName="Dni" />
-          <ScalarProperty Name="Fecha_Nac" ColumnName="Fecha_Nac" />
-          <ScalarProperty Name="Domicilio_Lat" ColumnName="Domicilio_Lat" />
-          <ScalarProperty Name="Domicilio_Lon" ColumnName="Domicilio_Lon" />
-          <ScalarProperty Name="Domicilio_Calle" ColumnName="Domicilio_Calle" />
-          <ScalarProperty Name="Domicilio_ID_Provincia" ColumnName="Domicilio_ID_Provincia" />
-          <ScalarProperty Name="Domicilio_ID_Localidad" ColumnName="Domicilio_ID_Localidad" />
-          <ScalarProperty Name="Domicilio_Nro" ColumnName="Domicilio_Nro" />
-          <ScalarProperty Name="Domicilio_Piso" ColumnName="Domicilio_Piso" />
-          <ScalarProperty Name="Domicilio_Depto" ColumnName="Domicilio_Depto" />
-          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
-          <ScalarProperty Name="Celular" ColumnName="Celular" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Clave" ColumnName="Clave" />
-          <ScalarProperty Name="ID_Facebook" ColumnName="ID_Facebook" />
-          <ScalarProperty Name="Estado" ColumnName="Estado" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="venta">
       <EntityTypeMapping TypeName="ColeccionarModel.venta">
         <MappingFragment StoreEntitySet="venta">
@@ -157,6 +130,33 @@
           <ScalarProperty Name="Estado" ColumnName="Estado" />
           <ScalarProperty Name="Foto" ColumnName="Foto" />
           <ScalarProperty Name="ID_Avatar" ColumnName="ID_Avatar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="ColeccionarModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="ID_Avatar" ColumnName="ID_Avatar" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="ID_Facebook" ColumnName="ID_Facebook" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Domicilio_Depto" ColumnName="Domicilio_Depto" />
+          <ScalarProperty Name="Domicilio_Piso" ColumnName="Domicilio_Piso" />
+          <ScalarProperty Name="Domicilio_Nro" ColumnName="Domicilio_Nro" />
+          <ScalarProperty Name="Domicilio_ID_Localidad" ColumnName="Domicilio_ID_Localidad" />
+          <ScalarProperty Name="Domicilio_ID_Provincia" ColumnName="Domicilio_ID_Provincia" />
+          <ScalarProperty Name="Domicilio_Calle" ColumnName="Domicilio_Calle" />
+          <ScalarProperty Name="Domicilio_Lon" ColumnName="Domicilio_Lon" />
+          <ScalarProperty Name="Domicilio_Lat" ColumnName="Domicilio_Lat" />
+          <ScalarProperty Name="Fecha_Nac" ColumnName="Fecha_Nac" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

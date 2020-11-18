@@ -38,15 +38,16 @@ namespace DAL
         public Nullable<int> Domicilio_Nro { get; set; }
         public Nullable<int> Domicilio_Piso { get; set; }
         public string Domicilio_Depto { get; set; }
-        public Nullable<int> Telefono { get; set; }
         public Nullable<int> Celular { get; set; }
         public string Email { get; set; }
-        public string Clave { get; set; }
         public Nullable<int> ID_Facebook { get; set; }
         public byte Estado { get; set; }
         public string alias { get; set; }
         public int ID_Avatar { get; set; }
+        public Nullable<long> Telefono { get; set; }
+        public string Clave { get; set; }
     
+        public virtual avatar avatar { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<calificacion> calificacion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -61,6 +62,5 @@ namespace DAL
         public virtual ICollection<venta> venta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<venta> venta1 { get; set; }
-        public virtual avatar avatar { get; set; }
     }
 }

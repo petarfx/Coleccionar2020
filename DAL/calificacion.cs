@@ -19,7 +19,7 @@ namespace DAL
         public int ID_Usuario { get; set; }
         public byte Calificacion1 { get; set; }
     
-        public virtual usuario usuario { get; set; }
         public virtual venta venta { get; set; }
+        public virtual usuario usuario { get; set; }
     }
 }

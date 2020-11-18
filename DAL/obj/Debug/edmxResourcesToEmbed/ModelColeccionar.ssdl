@@ -123,14 +123,14 @@
     <Property Name="Domicilio_Nro" Type="int" />
     <Property Name="Domicilio_Piso" Type="int" />
     <Property Name="Domicilio_Depto" Type="char" MaxLength="1" />
-    <Property Name="Telefono" Type="int" />
     <Property Name="Celular" Type="int" />
     <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Clave" Type="varchar" MaxLength="12" Nullable="false" />
     <Property Name="ID_Facebook" Type="int" />
     <Property Name="Estado" Type="tinyint" Nullable="false" />
     <Property Name="alias" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="ID_Avatar" Type="int" Nullable="false" />
+    <Property Name="Telefono" Type="bigint" />
+    <Property Name="Clave" Type="varchar" MaxLength="24" Nullable="false" />
   </EntityType>
   <EntityType Name="venta">
     <Key>

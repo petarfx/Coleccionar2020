@@ -9,7 +9,7 @@
 
                 <div class="panel-heading">
                     <div class="panel-title">
-                        <asp:Label ID="lblTitulo" runat="server" Text="Alta de Artículo"></asp:Label>
+                        <asp:Label ID="lblTitulo" runat="server" Text="Alta de Usuario"></asp:Label>
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@
                 <div id="div_txtDni" class="form-group required">
                     <label for="txtDni" class="control-label col-md-4  requiredField">DNI<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtDni" class="form-control" placeholder="Ingrese el DNI" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtDni" class="form-control" placeholder="Ingrese el DNI" runat="server" MaxLength="8" TextMode="Number"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvDni" runat="server" ControlToValidate="txtDni" ErrorMessage="Debe ingresar el DNI" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </div>
                 </div>
@@ -63,9 +63,9 @@
                 </div>
 
                 <div id="div_txtCalleNumero" class="form-group required">
-                    <label for="txtCalleNumero" class="control-label col-md-4  requiredField">CalleNumero<span class="asteriskField">*</span> </label>
+                    <label for="txtCalleNumero" class="control-label col-md-4  requiredField">Numero<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtCalleNumero" class="form-control" placeholder="Ingrese el Número de domicilio" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtCalleNumero" class="form-control" placeholder="Ingrese el Número de domicilio" runat="server" TextMode="Number"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvCalleNumero" runat="server" ControlToValidate="txtCalleNumero" ErrorMessage="Debe ingresar el Numero de Domicilio" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </div>
                 </div>
@@ -73,8 +73,7 @@
                 <div id="div_txtPiso" class="form-group required">
                     <label for="txtPiso" class="control-label col-md-4  requiredField">Piso<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtPiso" class="form-control" placeholder="Ingrese el Piso" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvPiso" runat="server" ControlToValidate="txtPiso" ErrorMessage="Debe ingresar el Piso" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtPiso" class="form-control" placeholder="Ingrese el Piso" runat="server" TextMode="Number"></asp:TextBox>
                     </div>
                 </div>
 
@@ -104,7 +103,7 @@
                 <div id="div_txtEmail" class="form-group required">
                     <label for="txtEmail" class="control-label col-md-4  requiredField">Email<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtEmail" class="form-control" placeholder="Ingrese el Email" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtEmail" class="form-control" placeholder="Ingrese el Email" runat="server" MaxLength="15" TextMode="Email"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Debe ingresar el Email" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </div>
                 </div>
@@ -112,7 +111,7 @@
                 <div id="div_txtContraseña" class="form-group required">
                     <label for="txtContraseña" class="control-label col-md-4  requiredField">Contraseña<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtContraseña" class="form-control" placeholder="Ingrese la Contraseña" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtContraseña" class="form-control" placeholder="Ingrese la Contraseña" runat="server" MaxLength="15" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="txtContraseña" ErrorMessage="Debe ingresar la Contraseña" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </div>
                 </div>
@@ -120,22 +119,21 @@
                 <div id="div_txtContraseña2" class="form-group required">
                     <label for="txtContraseña2" class="control-label col-md-4  requiredField">Confirmar Contraseña<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtContraseña2" class="form-control" placeholder="Reingrese la Contraseña" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtContraseña2" class="form-control" placeholder="Reingrese la Contraseña" runat="server" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvContraseña2" runat="server" ControlToValidate="txtContraseña2" ErrorMessage="Debe ingresar la confirmación de la contraseña" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="cvContraseñas" runat="server" ControlToCompare="txtContraseña" ControlToValidate="txtContraseña2" ErrorMessage="Las contraseñas deben coincidir" ForeColor="Red">*</asp:CompareValidator>
                     </div>
                 </div>
                 <div id="div_txtTelefono" class="form-group required">
                     <label for="txtTelefono" class="control-label col-md-4  requiredField">Telefono<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtTelefono" class="form-control" placeholder="Ingrese el telefono" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono" ErrorMessage="Debe ingresar el teléfono" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtTelefono" class="form-control" placeholder="Ingrese el telefono" runat="server" TextMode="Number"></asp:TextBox>
                     </div>
                 </div>
                 <div id="div_txtCelular" class="form-group required">
                     <label for="txtCelular" class="control-label col-md-4  requiredField">Celular<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtCelular" class="form-control" placeholder="Ingrese el Celular" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvCelular" runat="server" ControlToValidate="txtCelular" ErrorMessage="Debe ingresar el celular" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtCelular" class="form-control" placeholder="Ingrese el Celular" runat="server" MaxLength="10" TextMode="Number"></asp:TextBox>
                     </div>
                 </div>
 

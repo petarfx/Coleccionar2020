@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAL;
+using System.Security.Cryptography;
 
 namespace Coleccionar
 {
@@ -104,14 +105,30 @@ namespace Coleccionar
             user.Domicilio_ID_Localidad = Convert.ToInt32(ddlLocalidad.SelectedValue);
             user.Domicilio_Calle = txtCalle.Text.Trim();
             user.Domicilio_Nro = Convert.ToInt32(txtCalleNumero.Text.Trim());
-            user.Domicilio_Piso = Convert.ToInt32(txtPiso.Text.Trim());
-            user.Domicilio_Depto = txtDepto.Text.Trim();
+            if (txtPiso.Text.Trim() != string.Empty)
+                user.Domicilio_Piso = Convert.ToInt32(txtPiso.Text.Trim());
+            if (txtDepto.Text.Trim() != string.Empty)
+                user.Domicilio_Depto = txtDepto.Text.Trim();
             user.Domicilio_Lat = 1;
             user.Domicilio_Lon = 1;
-            user.Telefono = Convert.ToInt32(txtTelefono.Text.Trim());
-            user.Celular = Convert.ToInt32(txtCelular.Text.Trim());
+            if (txtTelefono.Text.Trim() != string.Empty)
+                user.Telefono = Convert.ToInt64(txtTelefono.Text.Trim());
+
+            if (txtCelular.Text.Trim() != string.Empty)
+                user.Celular = Convert.ToInt32(txtCelular.Text.Trim());
             user.ID_Avatar = 1;
-            user.Clave = txtContraseña.Text.Trim();
+
+            using (AesCryptoServiceProvider myAes = new AesCryptoServiceProvider())
+            {
+                Encriptar en = new Encriptar();
+                // Encriptar
+                byte[] encrypted = en.EncryptStringToBytes_Aes(txtContraseña.Text.Trim(), myAes.Key, myAes.IV);
+                // Desencriptar
+                //string decrypted = en.DecryptStringFromBytes_Aes(encrypted, myAes.Key, myAes.IV);                
+                user.Clave = Convert.ToBase64String(encrypted);
+            }
+
+            user.Email = txtEmail.Text.Trim();
             user.Estado = 1;
             _ctx.usuario.Add(user);
             _ctx.SaveChanges();
@@ -133,6 +150,7 @@ namespace Coleccionar
             txtDepto.Text = "";
             txtTelefono.Text = "";
             txtCelular.Text = "";
+            txtEmail.Text = "";
         }
 
         private bool ValidarDatos(List<usuario> user)
@@ -142,7 +160,8 @@ namespace Coleccionar
             {
                 var alias = user.Where(a => a.alias == txtAlias.Text.Trim()).ToList();
                 var email = user.Where(a => a.Email == txtEmail.Text.Trim()).ToList();
-                if (user.Any())
+
+                if (alias.Any())
                     throw new SqlNullValueException("El Alias ingresado ya existe, por favor seleccione uno distinto.");
                 if (email.Any())
                     throw new SqlNullValueException("Ya existe un usuario registrado con ese correo electrónico, por favor ingrese una distinta");

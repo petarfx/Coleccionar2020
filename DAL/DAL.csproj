@@ -62,6 +62,7 @@
     <Compile Include="encontrado.cs">
       <DependentUpon>ModelColeccionar.tt</DependentUpon>
     </Compile>
+    <Compile Include="Encriptar.cs" />
     <Compile Include="estado.cs">
       <DependentUpon>ModelColeccionar.tt</DependentUpon>
     </Compile>
