@@ -60,11 +60,11 @@
 
         window.fbAsyncInit = function () {
             FB.init({
-                appId: '810925979668061',
+                appId: '810925979668061', //ColeccionarID
                 cookie: true,  // enable cookies to allow the server to access
                 // the session
                 xfbml: true,  // parse social plugins on this page
-                version: 'v8.0' // use graph api version 2.8
+                version: 'v9.0' // use graph api version 2.8
             });
 
             // Now that we've initialized the JavaScript SDK, we call
@@ -92,7 +92,8 @@
 
     </script>
 
-
+    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v9.0&appId=810925979668061&autoLogAppEvents=1" nonce="HZEoQYgW"></script>
     <div class="row ">
         <div class=" col-lg-4 col-md-6 col-sm-8 col-lg-offset-4 col-md-offset-3 col-sm-offset-2">
 
@@ -131,6 +132,7 @@
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
                             <fb:login-button size="large" width="600px" scope="public_profile,email" onlogin="checkLoginState();">Iniciar con Facebook</fb:login-button>
+                            <%--<div class="fb-login-button" data-size="medium" data-button-type="login_with" data-layout="rounded" data-auto-logout-link="false" data-use-continue-as="false" data-width=""></div>--%>
                         </div>
                         <div class="col-md-4"></div>
                     </div>
@@ -138,7 +140,7 @@
 
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12">                        
                         <asp:Label ID="lblError" runat="server" ForeColor="Red" Text="Error" Visible="False"></asp:Label>
                         <asp:ValidationSummary ID="vsValidaciones" runat="server" ForeColor="Red" />
                     </div>
