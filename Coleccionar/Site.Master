@@ -41,9 +41,6 @@
             </Scripts>
         </asp:ScriptManager>
 
-
-
-
         <nav class="navbar navbar-default" style="padding-top: 10px;">
             <div class="row">
                 <div class="container">
@@ -55,10 +52,10 @@
                         <div class="Row">
                             <div class="col-lg-12">
                                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                    <div class="col-lg-11 col-md-11 col-sm-8">
+                                    <div class="col-lg-10 col-md-10 col-sm-7">
                                         <asp:TextBox ID="txtBusqueda" runat="server" CssClass="txtBuscar" placeholder="Ingrese la búsqueda"></asp:TextBox>
                                     </div>
-                                    <div class="col-lg-1 col-md-1 col-sm-4">
+                                    <div class="col-lg-2 col-md-2 col-sm-3">
                                         <button type="button" id="btnBuscar" class="btn btn-default btnBuscar">
                                             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                                         </button>
@@ -75,6 +72,15 @@
                                             Buscados
                                         </label>
                                     </div>
+                                </div>
+                                <div>
+                                    <asp:Label ID="lblInfoUser" runat="server" Text="lblInfoUser" Visible="false"></asp:Label>
+                                    <%--<button type="button" id="btnCerrarSesion" class="btn btn-info btn-xs" on onclick="btnCerrarSesion_Click">
+                                        <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Cerrar Sesión
+                                    </button>--%>
+                                    <asp:LinkButton runat="server" ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" CssClass="btn btn-info btn-xs" Visible="false">
+                                        <i class="glyphicon glyphicon-log-out" aria-hidden="true"></i>Cerrar Sesión
+                                    </asp:LinkButton>
                                 </div>
                             </div>
                         </div>
@@ -115,14 +121,12 @@
             </div>
         </nav>
 
-
-
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-               <%-- <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>--%>
+                <%-- <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>--%>
             </footer>
         </div>
 
