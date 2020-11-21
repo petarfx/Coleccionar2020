@@ -105,24 +105,24 @@
                     </div>
                 </div>
 
-                <div id="div_txtEmail" class="form-group required" style="padding-top: 10px">
-                    <label for="txtEmail" class="control-label col-md-4  requiredField">Email<span class="asteriskField">*</span> </label>
+                <div id="div_txtAlias" class="form-group required" style="padding-top: 10px">
+                    <label for="txtAlias" class="control-label col-md-4  requiredField">Alias<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtEmail" class="form-control" placeholder="Ingrese el Correo Electrónico" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Debe ingresar el Correo Electrónico" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <asp:TextBox ID="txtAlias" class="form-control" placeholder="Ingrese el Alias" runat="server" MaxLength="50"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="rfvtxtAlias" runat="server" ControlToValidate="txtAlias" ErrorMessage="Debe ingresar el Alias" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </div>
                 </div>
 
                 <div id="div_txtPassword" class="form-group required" style="padding-top: 10px">
                     <label for="txtPassword" class="control-label col-md-4  requiredField">Contraseña<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtPassword" class="form-control" placeholder="Ingrese la Contraseña" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txtPassword" class="form-control" placeholder="Ingrese la Contraseña" runat="server" MaxLength="15" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="Debe ingresar la Contraseña" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </div>
                 </div>
 
                 <div class="form-group-12 col-lg-12 col-md-12 text-center">
-                    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" class="btn btn-primary" CausesValidation="False" />
+                    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" class="btn btn-primary" CausesValidation="False" OnClick="btnAceptar_Click" />
 
 
                 </div>

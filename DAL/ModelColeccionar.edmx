@@ -135,7 +135,7 @@
           <Property Name="alias" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ID_Avatar" Type="int" Nullable="false" />
           <Property Name="Telefono" Type="bigint" />
-          <Property Name="Clave" Type="varchar" MaxLength="24" Nullable="false" />
+          <Property Name="Clave" Type="varchar" MaxLength="28" Nullable="false" />
         </EntityType>
         <EntityType Name="venta">
           <Key>
@@ -960,7 +960,7 @@
           <Property Name="alias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ID_Avatar" Type="Int32" Nullable="false" />
           <Property Name="Telefono" Type="Int64" />
-          <Property Name="Clave" Type="String" Nullable="false" MaxLength="24" FixedLength="false" Unicode="false" />
+          <Property Name="Clave" Type="String" Nullable="false" MaxLength="28" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="avatar" Relationship="ColeccionarModel.FK__usuario__ID_Avat__2EDAF651" FromRole="usuario" ToRole="avatar" />
           <NavigationProperty Name="calificacion" Relationship="ColeccionarModel.FK_calificacion_usuario" FromRole="usuario" ToRole="calificacion" />
           <NavigationProperty Name="encontrado" Relationship="ColeccionarModel.FK_encontrado_usuario" FromRole="usuario" ToRole="encontrado" />

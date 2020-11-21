@@ -32,9 +32,3 @@ $(function () {
 
     });
 });
-
-//$(document).ready(function () {
-//    var cantImg = 4;
-
-
-//});

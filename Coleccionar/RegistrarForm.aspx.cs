@@ -118,16 +118,7 @@ namespace Coleccionar
                 user.Celular = Convert.ToInt32(txtCelular.Text.Trim());
             user.ID_Avatar = 1;
 
-            using (AesCryptoServiceProvider myAes = new AesCryptoServiceProvider())
-            {
-                Encriptar en = new Encriptar();
-                // Encriptar
-                byte[] encrypted = en.EncryptStringToBytes_Aes(txtContraseña.Text.Trim(), myAes.Key, myAes.IV);
-                // Desencriptar
-                //string decrypted = en.DecryptStringFromBytes_Aes(encrypted, myAes.Key, myAes.IV);                
-                user.Clave = Convert.ToBase64String(encrypted);
-            }
-
+            user.Clave = Encriptar.Encrypt(txtContraseña.Text);
             user.Email = txtEmail.Text.Trim();
             user.Estado = 1;
             _ctx.usuario.Add(user);

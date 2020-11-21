@@ -69,7 +69,7 @@
                 <div id="div_ddlCategoria" class="form-group required">
                     <label for="ddlCategoria" class="control-label col-md-4  requiredField">Categoría<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
-                        <asp:DropDownList ID="ddlCategoria" class="form-control" runat="server" AutoPostBack="True"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlCategoria" class="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategoria_SelectedIndexChanged"></asp:DropDownList>
                         <asp:RequiredFieldValidator ID="rfvCategoria" runat="server" ControlToValidate="ddlCategoria" ErrorMessage="Debe ingresar la Categoría" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                     <label for="txtTitulo" class="control-label col-md-4  requiredField">Título<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
                         <asp:TextBox ID="txtTitulo" class="form-control" placeholder="Ingrese el Título" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvTitulo" runat="server" ControlToValidate="txtTitulo" ErrorMessage="Debe ingresar el Apellido" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvTitulo" runat="server" ControlToValidate="txtTitulo" ErrorMessage="Debe ingresar el Título" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -94,7 +94,7 @@
                     <label for="txtDescripcion" class="control-label col-md-4  requiredField">Descripcion<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
                         <asp:TextBox ID="txtDescripcion" class="form-control" placeholder="Ingrese la Descripcion" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe ingresar el Descripcion" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe ingresar el Descripción" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </div>
                 </div>
 
@@ -109,7 +109,7 @@
                 <div id="div_txtPrecio" class="form-group required">
                     <label for="txtPrecio" class="control-label col-md-4  requiredField">Precio<span class="asteriskField">*</span> </label>
                     <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtPrecio" class="form-control" placeholder="Ingrese el Precio" runat="server" MaxLength="8" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="txtPrecio" class="form-control" placeholder="Ingrese el Precio" runat="server" MaxLength="10"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvPrecio" runat="server" ControlToValidate="txtPrecio" ErrorMessage="Debe ingresar el Precio" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
                     </div>
                 </div>
