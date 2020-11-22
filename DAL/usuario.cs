@@ -40,7 +40,7 @@ namespace DAL
         public string Domicilio_Depto { get; set; }
         public Nullable<int> Celular { get; set; }
         public string Email { get; set; }
-        public Nullable<int> ID_Facebook { get; set; }
+        public Nullable<long> ID_Facebook { get; set; }
         public byte Estado { get; set; }
         public string alias { get; set; }
         public int ID_Avatar { get; set; }

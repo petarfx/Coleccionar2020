@@ -9,6 +9,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DAL;
 using System.Security.Cryptography;
+using System.Net;
+using System.IO;
+using System.Web.Script.Serialization;
+using Coleccionar.Enums;
+using System.Web.Security;
 
 namespace Coleccionar
 {
@@ -17,11 +22,95 @@ namespace Coleccionar
         private ColeccionarEntities _ctx = new ColeccionarEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!Page.IsPostBack)
             {
-                CargarProvincias();
-                setMaxLengthFields();
+                if (!Common.VerificaSesionActiva())
+                    Response.Redirect("IngresarForm.aspx");
+
+                if (string.IsNullOrEmpty(Request.QueryString["access_token"])) return; //ERROR! No token returned from Facebook!!
+
+                //let's send an http-request to facebook using the token            
+                string json = GetFacebookUserJSON(Request.QueryString["access_token"]);
+
+                //and Deserialize the JSON response
+                JavaScriptSerializer js = new JavaScriptSerializer();
+
+                FaceBookUser oUser = js.Deserialize<FaceBookUser>(json);
+                if (oUser != null)
+                {
+                    ColeccionarEntities ctx = new ColeccionarEntities();
+                    //Busco el usuario por el Id de facebook
+                    usuario user = ctx.usuario.Where(x => x.ID_Facebook == oUser.id).FirstOrDefault();
+
+                    if (user != null)
+                    {
+                        //Existe el Usuario, y ya tiene la cuenta asociada a FaceBook
+                        CargarDatosEnSesion(user);
+                        FormsAuthentication.RedirectFromLoginPage("A", false);
+                    }
+                    else
+                    {
+                        //El usuario entra por primera vez con Face, debe asociar la cuenta
+                        CargarProvincias();
+                        setMaxLengthFields();
+                        CargarDatosFacebook(oUser);
+                    }
+                }
             }
+
+        }
+
+        private void CargarDatosEnSesion(usuario user)
+        {
+            Session["ID"] = user.ID_Usuario;
+            Session["Nombre"] = user.Nombre;
+            Session["Alias"] = user.alias;
+        }
+
+        private void CargarDatosFacebook(FaceBookUser oUser)
+        {
+            MostrarMensaje1raVezFacebook();
+            txtNombre.Text = oUser.first_name;
+            txtApellido.Text = oUser.last_name;
+            txtEmail.Text = oUser.email;
+            txtFecNac.Value = FormatearFecha(oUser.birthday);
+            ViewState["ID_Facebook"] = oUser.id;
+        }
+
+        private void MostrarMensaje1raVezFacebook()
+        {
+            lblmsjTitulo.Text = "Atención: ";
+            lblmsjCuerpo.Text = "Por ser la primera vez que inicia sesión con Facebook, debe completar todos los datos requeridos para asociar su cuenta";
+            divMensaje.Attributes["class"] = "showhide col-lg-10 col-lg-offset-1 alert-dismissible alert alert-info";
+            ClientScript.RegisterStartupScript(GetType(), "mensajeshowhide", "MuestraOcultaMensaje();", true);
+        }
+
+        private void MensajeAltaOk()
+        {
+            lblmsjTitulo.Text = "Registración: ";
+            lblmsjCuerpo.Text = "El usuario ha sido dado de alta correctamente.";
+            divMensaje.Attributes["class"] = "showhide col-lg-10 col-lg-offset-1 alert-dismissible alert alert-success";
+            ClientScript.RegisterStartupScript(GetType(), "mensajeshowhide", "MuestraOcultaMensaje();", true);
+        }
+
+        private string FormatearFecha(string birthday)
+        {
+            string fecha = birthday.Substring(6, 4) + "-" + birthday.Substring(0, 2) + "-" + birthday.Substring(3, 2);
+            return Convert.ToDateTime(fecha).ToString("yyyy-MM-dd");
+        }
+
+        private static string GetFacebookUserJSON(string access_token)
+        {
+            string url = string.Format("https://graph.facebook.com/me?access_token={0}&fields=email,name,first_name,last_name,link,birthday,cover,devices,gender", access_token);
+
+            WebClient wc = new WebClient();
+            Stream data = wc.OpenRead(url);
+            StreamReader reader = new StreamReader(data);
+            string s = reader.ReadToEnd();
+            data.Close();
+            reader.Close();
+
+            return s;
         }
 
         private void setMaxLengthFields()
@@ -120,10 +209,15 @@ namespace Coleccionar
 
             user.Clave = Encriptar.Encrypt(txtContraseña.Text);
             user.Email = txtEmail.Text.Trim();
-            user.Estado = 1;
+            user.Estado = (int)EnumEstado.Activo;
+
+            if (ViewState["ID_Facebook"] != null)
+                user.ID_Facebook = Convert.ToInt64(ViewState["ID_Facebook"].ToString());
+
             _ctx.usuario.Add(user);
             _ctx.SaveChanges();
             limpiarCampos();
+            MensajeAltaOk();
         }
 
         private void limpiarCampos()

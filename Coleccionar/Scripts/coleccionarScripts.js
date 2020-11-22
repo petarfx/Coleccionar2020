@@ -32,3 +32,10 @@ $(function () {
 
     });
 });
+
+function MuestraOcultaMensaje() {
+    //$(".showhide").hide().fadeIn(4000);
+    $(".showhide").fadeIn(4000);
+    $(".showhide").delay(8000);
+    $(".showhide").fadeOut(2000);
+};

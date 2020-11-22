@@ -130,7 +130,7 @@
           <Property Name="Domicilio_Depto" Type="char" MaxLength="1" />
           <Property Name="Celular" Type="int" />
           <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="ID_Facebook" Type="int" />
+          <Property Name="ID_Facebook" Type="bigint" />
           <Property Name="Estado" Type="tinyint" Nullable="false" />
           <Property Name="alias" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ID_Avatar" Type="int" Nullable="false" />
@@ -955,7 +955,7 @@
           <Property Name="Domicilio_Depto" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="Celular" Type="Int32" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ID_Facebook" Type="Int32" />
+          <Property Name="ID_Facebook" Type="Int64" />
           <Property Name="Estado" Type="Byte" Nullable="false" />
           <Property Name="alias" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ID_Avatar" Type="Int32" Nullable="false" />

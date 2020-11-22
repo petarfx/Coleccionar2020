@@ -14,6 +14,10 @@ namespace Coleccionar
         private ColeccionarEntities _ctx = new ColeccionarEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!Common.VerificaSesionActiva())
+                Response.Redirect("IngresarForm.aspx");
+
             if (!Page.IsPostBack)
             {
                 CargarEstadoPublicacion();
