@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PublicarVentaForm.aspx.cs" Inherits="Coleccionar.PublicarVentaForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LoggedIn.Master" AutoEventWireup="true" CodeBehind="PublicarVentaForm.aspx.cs" Inherits="Coleccionar.PublicarVentaForm" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style type="text/css">
@@ -56,8 +56,8 @@
 
 
     <div class="row ">
-        <div class=" col-lg-4 col-md-6 col-sm-8 col-lg-offset-4 col-md-offset-3 col-sm-offset-2">
-
+        <%--<div class=" col-lg-4 col-md-6 col-sm-8 col-lg-offset-4 col-md-offset-3 col-sm-offset-2">--%>
+        <div class="col-lg-8 col-md-10 col-sm-12 col-lg-offset-2 col-md-offset-1">
             <div class="panel panel-info sombreado">
 
                 <div class="panel-heading">
@@ -66,65 +66,208 @@
                     </div>
                 </div>
 
-                <div id="div_ddlCategoria" class="form-group required">
-                    <label for="ddlCategoria" class="control-label col-md-4  requiredField">Categoría<span class="asteriskField">*</span> </label>
-                    <div class="controls col-md-8 ">
-                        <asp:DropDownList ID="ddlCategoria" class="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategoria_SelectedIndexChanged"></asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="rfvCategoria" runat="server" ControlToValidate="ddlCategoria" ErrorMessage="Debe ingresar la Categoría" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
-                    </div>
-                </div>
 
-                <div id="div_ddlSubCategoria" class="form-group required">
-                    <label for="ddlSubCategoria" class="control-label col-md-4  requiredField">Sub Categoría<span class="asteriskField">*</span> </label>
-                    <div class="controls col-md-8 ">
-                        <asp:DropDownList ID="ddlSubCategoria" class="form-control" runat="server" AutoPostBack="True"></asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="rfvSubCategoria" runat="server" ControlToValidate="ddlSubCategoria" ErrorMessage="Debe ingresar la Sub-Categoría" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
-                    </div>
-                </div>
 
-                <div id="div_txtTitulo" class="form-group required" style="padding-top: 10px">
-                    <label for="txtTitulo" class="control-label col-md-4  requiredField">Título<span class="asteriskField">*</span> </label>
-                    <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtTitulo" class="form-control" placeholder="Ingrese el Título" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvTitulo" runat="server" ControlToValidate="txtTitulo" ErrorMessage="Debe ingresar el Título" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                <%--<div class="row form-group">
+                    <div id="div_TipoDePublicacion" class="col-md-6" style="padding-top: 10px">
+                        <label class="control-label col-md-4">Tipo de Publiación</label>
+                        <div class="controls col-md-8 ">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-secondary active">
+                                    <input type="radio" name="options" id="opVenta" autocomplete="off" checked>
+                                    Venta
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="options" id="opBusqueda" autocomplete="off">
+                                    Búsqueda
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div id="div_txtDescripcion" class="form-group required" style="padding-top: 10px">
-                    <label for="txtDescripcion" class="control-label col-md-4  requiredField">Descripcion<span class="asteriskField">*</span> </label>
-                    <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtDescripcion" class="form-control" placeholder="Ingrese la Descripcion" runat="server"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe ingresar el Descripción" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    <div id="div_DescripcionTipoDePublicacion" class="col-md-6" style="padding-top: 10px">
                     </div>
-                </div>
+                </div>--%>
 
-                <div id="div_ddlEstadoProducto" class="form-group required">
-                    <label for="ddlEstadoProducto" class="control-label col-md-4  requiredField">Estado del Producto<span class="asteriskField">*</span> </label>
-                    <div class="controls col-md-8 ">
-                        <asp:DropDownList ID="ddlEstadoProducto" class="form-control" runat="server" AutoPostBack="True"></asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="rfvEstadoProducto" runat="server" ControlToValidate="ddlEstadoProducto" ErrorMessage="Debe ingresar el Estado del Producto" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                <div class="row form-group">
+                    <div id="div_TipoDePublicacion" class="col-md-6" style="padding-top: 10px">
+                        <label class="control-label col-md-4">Tipo de Publiación</label>
+                        <div class="controls col-md-8 ">
+                            <asp:UpdatePanel ID="upTipoVenta" runat="server">
+                                <ContentTemplate>
+                                    <asp:Button ID="btnVenta" runat="server" Text="Venta" class="btn btn-success activeButton" CausesValidation="False" OnClick="btnVenta_Click" />
+                                    <asp:Button ID="btnBusqueda" runat="server" Text="Busqueda" class="btn btn-secondary inactiveButton" CausesValidation="False" OnClick="btnBusqueda_Click" />
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
                     </div>
-                </div>
-
-                <div id="div_txtPrecio" class="form-group required">
-                    <label for="txtPrecio" class="control-label col-md-4  requiredField">Precio<span class="asteriskField">*</span> </label>
-                    <div class="controls col-md-8 ">
-                        <asp:TextBox ID="txtPrecio" class="form-control" placeholder="Ingrese el Precio" runat="server" MaxLength="10"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rfvPrecio" runat="server" ControlToValidate="txtPrecio" ErrorMessage="Debe ingresar el Precio" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    <div id="div_DescripcionTipoDePublicacion" class="col-md-6" style="padding-top: 10px">
                     </div>
                 </div>
 
 
-                <div class="form-group required">
-                    <div class="col-sm-4 imgUp">
+                <div class="row form-group">
+                    <div id="div_ddlCategoria" class="col-md-6" style="padding-top: 10px">
+                        <label for="ddlCategoria" class="control-label col-md-4  requiredField">Categoría<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                                <ContentTemplate>
+                                    <asp:DropDownList ID="ddlCategoria" class="form-control" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategoria_SelectedIndexChanged"></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvCategoria" runat="server" ControlToValidate="ddlCategoria" ErrorMessage="Debe ingresar la Categoría" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+                    </div>
+
+                    <div id="div_ddlSubCategoria" class="col-md-6" style="padding-top: 10px">
+                        <label for="ddlSubCategoria" class="control-label col-md-4  requiredField">Sub Categoría<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                <ContentTemplate>
+                                    <asp:DropDownList ID="ddlSubCategoria" class="form-control" runat="server" AutoPostBack="True"></asp:DropDownList>
+                                    <asp:RequiredFieldValidator ID="rfvSubCategoria" runat="server" ControlToValidate="ddlSubCategoria" ErrorMessage="Debe ingresar la Sub-Categoría" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row form-group">
+                    <div id="div_txtTitulo" class="col-md-12" style="padding-top: 10px">
+                        <label for="txtTitulo" class="control-label col-md-2 requiredField">Título<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-10 ">
+                            <asp:TextBox ID="txtTitulo" class="form-control" placeholder="Ingrese el Título" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvTitulo" runat="server" ControlToValidate="txtTitulo" ErrorMessage="Debe ingresar el Título" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div id="div_txtDescripcion" class="col-md-12" style="padding-top: 10px">
+                        <label for="txtDescripcion" class="control-label col-md-2 requiredField">Descripción<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-10 ">
+                            <asp:TextBox ID="txtDescripcion" class="form-control" placeholder="Ingrese la Descripcion" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="Debe ingresar el Descripción" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div id="div_ddlEstadoProducto" class="col-md-6" style="padding-top: 10px">
+                        <label for="ddlEstadoProducto" class="control-label col-md-4  requiredField">Estado del Producto<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <asp:DropDownList ID="ddlEstadoProducto" class="form-control" runat="server" AutoPostBack="True"></asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfvEstadoProducto" runat="server" ControlToValidate="ddlEstadoProducto" ErrorMessage="Debe ingresar el Estado del Producto" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+
+                    <div id="div_txtPrecio" class="col-md-6" style="padding-top: 10px">
+                        <label for="txtPrecio" class="control-label col-md-4  requiredField">Precio<span class="asteriskField">*</span> </label>
+                        <div class="controls col-md-8 ">
+                            <asp:TextBox ID="txtPrecio" class="form-control" placeholder="Ingrese el Precio" runat="server" MaxLength="10"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvPrecio" runat="server" ControlToValidate="txtPrecio" ErrorMessage="Debe ingresar el Precio" Font-Bold="True" ForeColor="Red">*</asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+                </div>
+
+                <%-- <div class="row form-group">
+                    <div class="col-md-12" style="padding-top: 10px">
+                        <asp:FileUpload ID="FileUpload1" runat="server" />
+                    </div>
+                </div>--%>
+
+
+                <div class="row form-group">
+
+                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 imgUp" id="divImg1">
                         <div class="imagePreview"></div>
                         <label class="btn btn-primary">
-                            Cargar<input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px; height: 0px; overflow: hidden;">
+                            Cargar<asp:FileUpload ID="FileUpload1" runat="server" class="uploadFile img" Style="width: 0px; height: 0px; overflow: hidden;" />
+                        </label>
+                        <i class="fa fa-plus imgAdd"></i>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 imgUp" id="divImg2">
+                        <div class="imagePreview"></div>
+                        <label class="btn btn-primary">
+                            Cargar<asp:FileUpload ID="FileUpload2" runat="server" class="uploadFile img" Style="width: 0px; height: 0px; overflow: hidden;" />
                         </label>
                     </div>
-                    <!-- col-2 -->
-                    <i class="fa fa-plus imgAdd"></i>
+                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 imgUp" id="divImg3">
+                        <div class="imagePreview"></div>
+                        <label class="btn btn-primary">
+                            Cargar<asp:FileUpload ID="FileUpload3" runat="server" class="uploadFile img" Style="width: 0px; height: 0px; overflow: hidden;" />
+                        </label>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 imgUp" id="divImg4">
+                        <div class="imagePreview"></div>
+                        <label class="btn btn-primary">
+                            Cargar<asp:FileUpload ID="FileUpload4" runat="server" class="uploadFile img" Style="width: 0px; height: 0px; overflow: hidden;" />
+                        </label>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 imgUp" id="divImg5">
+                        <div class="imagePreview"></div>
+                        <label class="btn btn-primary">
+                            Cargar<asp:FileUpload ID="FileUpload5" runat="server" class="uploadFile img" Style="width: 0px; height: 0px; overflow: hidden;" />
+                        </label>
+                    </div>
+                    <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 imgUp" id="divImg6">
+                        <div class="imagePreview"></div>
+                        <label class="btn btn-primary">
+                            Cargar<asp:FileUpload ID="FileUpload6" runat="server" class="uploadFile img" Style="width: 0px; height: 0px; overflow: hidden;" />
+                        </label>
+                    </div>
                 </div>
+
+
+
+
+
+                <%--ANDA BIEN Y LO ENCUENTRA CON FORM CONTROLS..--%>
+                <%--<div class="row form-group">
+                    <div class="col-md-12" style="padding-top: 10px">
+                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 imgUp">
+                            <div class="imagePreview"></div>
+                            <label class="btn btn-primary">
+                                Cargar<asp:FileUpload ID="FileUpload2" runat="server" class="uploadFile img" Style="width: 0px; height: 0px; overflow: hidden;" />
+                            </label>
+                        </div>
+                        <i class="fa fa-plus imgAdd"></i>
+                    </div>
+                </div>--%>
+
+
+                <%--ANDA BIEN ...............................................--%>
+                <%--<div class="row form-group">
+                    <div class="col-md-12" style="padding-top: 10px">
+                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 imgUp">
+                            <div class="imagePreview"></div>
+                            <label class="btn btn-primary">
+                                Cargar<input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px; height: 0px; overflow: hidden;">
+                            </label>
+                        </div>
+                        <i class="fa fa-plus imgAdd"></i>
+                    </div>
+                </div>--%>
+
+
+
+                <%--<div class="row form-group">
+                    <div class="col-md-12" style="padding-top: 10px">
+                        <div class="col-sm-4 col-md-3 col-lg-2 imgUp">
+                            <div class="row form-group">
+                                <div class="imagePreview"></div>
+                            </div>
+                            <div class="row form-group">
+                                <label class="btn btn-primary">
+                                    Cargar<input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px; height: 0px; overflow: hidden;">
+                                </label>
+                            </div>
+                        </div>
+                        <i class="fa fa-plus imgAdd"></i>
+                    </div>
+                </div>--%>
+
+
 
                 <%--<div class="col-sm-4 imgUp">
                     <i class="fa fa-plus imgAdd"></i>
@@ -138,7 +281,7 @@
 
 
                 <div class="form-group-12 col-lg-12 col-md-12 text-center">
-                    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" class="btn btn-primary" CausesValidation="False" />
+                    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" class="btn btn-primary" CausesValidation="False" OnClick="btnAceptar_Click" />
 
                 </div>
 

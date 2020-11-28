@@ -24,9 +24,7 @@ namespace Coleccionar
         {
             if (!Page.IsPostBack)
             {
-                if (!Common.VerificaSesionActiva())
-                    Response.Redirect("IngresarForm.aspx");
-
+                
                 if (string.IsNullOrEmpty(Request.QueryString["access_token"])) return; //ERROR! No token returned from Facebook!!
 
                 //let's send an http-request to facebook using the token            

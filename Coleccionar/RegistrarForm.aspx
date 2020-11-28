@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="RegistrarForm.aspx.cs" Inherits="Coleccionar.RegistrarForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LoggedOut.Master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="RegistrarForm.aspx.cs" Inherits="Coleccionar.RegistrarForm" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 

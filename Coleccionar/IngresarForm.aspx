@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="IngresarForm.aspx.cs" Inherits="Coleccionar.IngresarForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/LoggedOut.Master" CodeBehind="IngresarForm.aspx.cs" Inherits="Coleccionar.IngresarForm" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 

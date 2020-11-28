@@ -22,3 +22,23 @@
 .espacioTop {
     padding-top: 10px;
 }
+
+.activeButton {
+    text-shadow: 0px 0px 3px #000000;
+    box-shadow: 0px 0px 8px 2px #56ff00;
+    border-color: #d8ff00;
+    border-width: 2px;
+    border-radius: 10px;
+    background-color: #43f707;
+    color: #fbfff0;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+
+.inactiveButton {
+    color: white;
+    background-color: darkslategray;
+    border-color: #ffffff;
+    border-radius: 10px;
+    transform: scale(0.9);
+}

@@ -1,8 +1,8 @@
-﻿var cantImg = 5;
+﻿var cantImg = 5; //de 0 a 5 son 6 imagenes
 
 $(".imgAdd").click(function () {
-    if (cantImg > 0) {
-        $(this).closest(".row").find('.imgAdd').before('<div class="col-sm-4 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Cargar<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
+    if (cantImg > 0) {  //col-sm-4 col-md-3 col-lg-2
+        $(this).closest(".row").find('.imgAdd').before('<div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 imgUp"><div class="imagePreview"></div><label class="btn btn-primary">Cargar<input type="file" runat="server" class="uploadFile img" name="ctl00$MainContent$FileUpload3" id="MainContent_FileUpload3" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>');
         cantImg--;
     }
     if (cantImg == 0)
