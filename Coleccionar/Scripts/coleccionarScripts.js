@@ -39,3 +39,8 @@ function MuestraOcultaMensaje() {
     $(".showhide").delay(8000);
     $(".showhide").fadeOut(2000);
 };
+
+
+$(function () {
+    $('#myCarousel').carousel();
+});

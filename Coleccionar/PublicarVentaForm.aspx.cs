@@ -18,8 +18,8 @@ namespace Coleccionar
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //if (!Common.VerificaSesionActiva())
-            //    Response.Redirect("IngresarForm.aspx");
+            if (!Common.VerificaSesionActiva())
+                Response.Redirect("IngresarForm.aspx");
 
             if (!Page.IsPostBack)
             {

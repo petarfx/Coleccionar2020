@@ -23,6 +23,18 @@
     padding-top: 10px;
 }
 
+.espacioDown {
+    padding-bottom: 10px;
+}
+
+.marginTop {
+    margin-top: 18px;
+}
+
+.marginDown {
+    margin-bottom: 18px;
+}
+
 .activeButton {
     text-shadow: 0px 0px 3px #000000;
     box-shadow: 0px 0px 8px 2px #56ff00;
@@ -41,4 +53,67 @@
     border-color: #ffffff;
     border-radius: 10px;
     transform: scale(0.9);
+}
+
+.tituloPublicacion {
+    font-size: 40px;
+    font-family: helvetica;
+}
+
+.precioPublicacion {
+    font-size: 50px;
+    font-family: helvetica;
+}
+
+.estadoProdPublicacion {
+    font-size: 12px;
+    font-family: helvetica;
+}
+
+.categoriaPublicacion {
+    font-size: 30px;
+    font-family: helvetica;
+    font-style: italic;
+}
+
+.carrouselPublicacion {
+    height: 350px;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #425656;
+    /*box-shadow: 1px 11px 10px 2px #99a2ab;*/
+    box-shadow: 0px 11px 16px 2px #657d92;
+}
+
+.datosPublicacion {
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #418686;
+    box-shadow: 0px 11px 16px 2px #657d92;
+}
+
+.divPublicacionDescripcion {
+    margin-top: 15px;
+    border-style: solid;
+    border-radius: 15px;
+    padding-left: 25px;
+    border-color: #418686;
+    box-shadow: 0px 11px 16px 2px #657d92;
+}
+
+.tituloDescripcionPublicacion {
+    font-size: 30px;
+    font-family: helvetica;
+}
+
+.descripcionPublicacion {
+    font-size: 20px;
+    font-family: helvetica;
+}
+
+.grillaPublicaciones {
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #3c5265;
+    box-shadow: 0px 11px 17px 6px #6c7b92;
 }

@@ -40,6 +40,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
@@ -112,6 +113,8 @@
     <Compile Include="venta.cs">
       <DependentUpon>ModelColeccionar.tt</DependentUpon>
     </Compile>
+    <Compile Include="Views.cs" />
+    <Compile Include="Wrappers\PublicacionesWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="ModelColeccionar.edmx">
