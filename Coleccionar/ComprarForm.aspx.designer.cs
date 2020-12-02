@@ -11,52 +11,61 @@ namespace Coleccionar
 {
 
 
-    public partial class SiteMaster
+    public partial class ComprarForm
     {
 
         /// <summary>
-        /// Control txtBusqueda.
+        /// Control lblTitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBusqueda;
+        protected global::System.Web.UI.WebControls.Label lblTitulo;
 
         /// <summary>
-        /// Control btnBuscar.
+        /// Control rbMetodoEntrega.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnBuscar;
+        protected global::System.Web.UI.WebControls.RadioButtonList rbMetodoEntrega;
 
         /// <summary>
-        /// Control lblInfoUser.
+        /// Control ddlMedioDePago.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblInfoUser;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMedioDePago;
 
         /// <summary>
-        /// Control btnCerrarSesion.
+        /// Control btnSiguiente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnCerrarSesion;
+        protected global::System.Web.UI.WebControls.Button btnSiguiente;
 
         /// <summary>
-        /// Control MainContent.
+        /// Control lblError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Label lblError;
+
+        /// <summary>
+        /// Control vsValidaciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsValidaciones;
     }
 }

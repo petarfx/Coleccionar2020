@@ -1,4 +1,14 @@
-﻿.amplio {
+﻿@font-face {
+    font-family: 'Wanted M54';
+    src: url('../fonts/Wanted M54.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Wantedo';
+    src: url('../fonts/Wantedo.ttf') format('truetype');
+}
+
+.amplio {
     width: 100%;
 }
 
@@ -81,7 +91,6 @@
     border-style: solid;
     border-radius: 15px;
     border-color: #425656;
-    /*box-shadow: 1px 11px 10px 2px #99a2ab;*/
     box-shadow: 0px 11px 16px 2px #657d92;
 }
 
@@ -116,4 +125,121 @@
     border-radius: 15px;
     border-color: #3c5265;
     box-shadow: 0px 11px 17px 6px #6c7b92;
+}
+
+
+.fechaPublicacion {
+    font-size: 17px;
+    font-family: helvetica;
+    font-style: italic;
+    text-align: center;
+}
+
+.btnLoTengo {
+    font-family: helvetica;
+}
+
+.menuEnVenta {
+    background-color: #CFFCBF;
+    transition: all .2s ease-in-out;
+    border-style: solid;
+    border-radius: 24px;
+    border-color: #50824d14;
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+    margin-top: 5px;
+}
+
+.menuBuscados {
+    background-color: #BFD0FC;
+    transition: all .2s ease-in-out;
+    border-style: solid;
+    border-radius: 24px;
+    border-color: rgba(77, 94, 130, 0.08);
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+    margin-top: 5px;
+}
+
+.menuEnVenta:hover {
+    transform: scale(1.025);
+    background-color: #a7f68b !important;
+    font-weight: 200;
+}
+
+.menuBuscados:hover {
+    transform: scale(1.025);
+    background-color: #8babff !important;
+    font-weight: 200;
+}
+
+.tituloModalGrande {
+    font-size: 52px;
+    font-family: 'Wanted M54';
+    color: #4a2e09;
+    text-shadow: 0px 7px 17px #2f1407ad;
+}
+
+.divTextoCentradoVertical {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.textoCuerpoModalGrande {
+    font-size: 22px;
+    font-family: 'Wantedo';    
+    color: #4c3305;
+    text-shadow: 0px 7px 12px #8e7a1ade;
+}
+
+.DivAntiguo {
+    background-color: #f8fbd4;
+    box-shadow: inset 0 0 20px 20px #98885b9e;
+}
+
+.botonPirata {
+    width: 100%;
+    background-color: #79694a;
+    box-shadow: inset 0 0 17px 3px #292019;
+    border-style: solid;
+    border-color: #251006b8;
+    border-radius: 14px;
+    border-width: 2px;
+    box-shadow: 0px 6px 15px 0px black;
+    font-family: 'Wanted M54';
+    color: wheat;
+    font-size: 17px;
+}
+
+.sombreado {
+    box-shadow: 0px 9px 20px 7px #6f83a061;
+}
+
+.sombreadoModal {
+    box-shadow: 0px 15px 20px 6px #150c07;
+}
+
+.encontradoGrilla {
+    background-color: #ffe000 !important;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 0 18px 5px #FFEB3B;
+    box-shadow: inset 0 0 20px 20px #9a6522;
+    text-shadow: 0 0 17px black;
+}
+
+.cantidadesGrilla {
+    font-size:16px;
+    font-style:italic;
+    font-weight:bold;
+    font-family: Verdana;
+}
+
+.cuentaRegresiva {
+    font-size: 22px;
+    font-style: italic;
+    font-weight: bold;
+    font-family: 'Wantedo';
 }

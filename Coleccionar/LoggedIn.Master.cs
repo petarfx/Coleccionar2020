@@ -43,6 +43,12 @@ namespace Coleccionar
             ReestablecerVariablesDeSesion();
         }
 
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string filtro = txtBusqueda.Text.Trim();
+            Response.Redirect(string.Format("BusquedaForm.aspx?filtro={0}", filtro));
+        }
+
         #endregion
     }
 }

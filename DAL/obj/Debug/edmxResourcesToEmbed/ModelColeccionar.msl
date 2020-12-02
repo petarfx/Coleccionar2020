@@ -102,14 +102,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tipoPago">
-      <EntityTypeMapping TypeName="ColeccionarModel.tipoPago">
-        <MappingFragment StoreEntitySet="tipoPago">
-          <ScalarProperty Name="ID_TipoPago" ColumnName="ID_TipoPago" />
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="venta">
       <EntityTypeMapping TypeName="ColeccionarModel.venta">
         <MappingFragment StoreEntitySet="venta">
@@ -157,6 +149,14 @@
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Apellido" ColumnName="Apellido" />
           <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoPago">
+      <EntityTypeMapping TypeName="ColeccionarModel.tipoPago">
+        <MappingFragment StoreEntitySet="tipoPago">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="ID_TipoPago" ColumnName="ID_TipoPago" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

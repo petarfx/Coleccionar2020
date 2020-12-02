@@ -33,6 +33,15 @@ namespace Coleccionar
         protected global::System.Web.UI.WebControls.Label lblEstadoProducto;
 
         /// <summary>
+        /// Control lblTipoPublicacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTipoPublicacion;
+
+        /// <summary>
         /// Control lblTitulo.
         /// </summary>
         /// <remarks>
@@ -58,6 +67,15 @@ namespace Coleccionar
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblPrecio;
+
+        /// <summary>
+        /// Control lblFecha.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFecha;
 
         /// <summary>
         /// Control btnPreguntar.
@@ -94,5 +112,41 @@ namespace Coleccionar
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescripcion;
+
+        /// <summary>
+        /// Control imgTitulo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgTitulo;
+
+        /// <summary>
+        /// Control lblLoTengoTitulo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLoTengoTitulo;
+
+        /// <summary>
+        /// Control lblLoTengoMsj.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblLoTengoMsj;
+
+        /// <summary>
+        /// Control btnLoTengo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnLoTengo;
     }
 }

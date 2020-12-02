@@ -47,34 +47,22 @@
             <div class="row">
                 <div class="container">
 
-                    <div class="col-md-2 col-sm-0">
+                    <div class="col-md-2 col-sm-12">
                         <img src="img/logoGancho.png" class="amplio" />
                     </div>
                     <div class="col-md-10 col-sm-12">
                         <div class="Row">
-                            <div class="col-lg-12">
-                                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                    <div class="col-lg-10 col-md-10 col-sm-7">
-                                        <asp:TextBox ID="txtBusqueda" runat="server" CssClass="txtBuscar" placeholder="Ingrese la búsqueda"></asp:TextBox>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-3">
-                                        <button type="button" id="btnBuscar" runat="server" class="btn btn-default btnBuscar" onserverclick="btnBuscar_Click" causesvalidation="False">
-                                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                                        </button>
-                                    </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <%--<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">--%>
+                                <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                                    <asp:TextBox ID="txtBusqueda" runat="server" CssClass="txtBuscar" placeholder="Ingrese la búsqueda"></asp:TextBox>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                                    <div class="btn-group btn-group-toggle d-flex flex-column flex-md-row" data-toggle="buttons">
-                                        <label class="btn btn-primary">
-                                            <input type="checkbox" id="chkEnVenta" autocomplete="off">
-                                            En Venta
-                                        </label>
-                                        <label class="btn btn-primary">
-                                            <input type="checkbox" id="chkBuscados" autocomplete="off">
-                                            Buscados
-                                        </label>
-                                    </div>
-                                </div>                                
+                                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                    <button type="button" id="btnBuscar" runat="server" class="btn btn-default btnBuscar" onserverclick="btnBuscar_Click" causesvalidation="False">
+                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                                <%--</div> --%>
                             </div>
                         </div>
                         <div class="Row">
@@ -92,6 +80,8 @@
                                     <ul class="nav navbar-nav">
                                         <li><a href="RegistrarForm">Registrate</a></li>
                                         <li><a href="IngresarForm">Ingresa</a></li>
+                                        <li><a href="BusquedaForm?tipopub=1" class="menuEnVenta">En Venta</a></li>
+                                        <li><a href="BusquedaForm?tipopub=2" class="menuBuscados">Buscados</a></li>
                                     </ul>
                                 </div>
                             </div>

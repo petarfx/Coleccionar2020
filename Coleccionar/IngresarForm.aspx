@@ -33,12 +33,12 @@
                 </div>
 
                 <div class="form-group-12 col-lg-12 col-md-12 text-center">
-                    <div class="col-md-6">
-                        <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" class="btn btn-primary" CausesValidation="False" OnClick="btnAceptar_Click" />
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" class="btn btn-primary amplio" CausesValidation="False" OnClick="btnAceptar_Click" />
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 espacioDown">
                         <div id="fb-root"></div>
-                        <a href="#" onclick="loginByFacebook();" class="fa fa-facebook-f btn btn-primary" style="height: 34px;">  Facebook</a>
+                        <a href="#" onclick="loginByFacebook();" class="fa fa-facebook-f btn btn-primary amplio" style="height: 34px;">  Facebook</a>
                     </div>
                 </div>
 

@@ -141,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BusquedaForm.aspx" />
+    <Content Include="ComprarForm.aspx" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -162,10 +163,20 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="LoggedOut.Master" />
+    <Content Include="fonts\Wanted M54.ttf" />
+    <Content Include="fonts\Wantedo.ttf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="img\logoGancho.png" />
     <Content Include="img\logoLoro.png" />
     <Content Include="IngresarForm.aspx" />
+    <Content Include="LoTengoForm.aspx" />
+    <Content Include="MiPerfilForm.aspx" />
+    <Content Include="MisBusquedasForm.aspx" />
+    <Content Include="MisComprasForm.aspx" />
+    <Content Include="MisMensajesForm.aspx" />
+    <Content Include="MisVentasForm.aspx" />
+    <Content Include="OK.aspx" />
+    <Content Include="PerfilForm.aspx" />
     <Content Include="PublicarVentaForm.aspx" />
     <Content Include="RegistrarForm.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -214,6 +225,13 @@
     <Compile Include="BusquedaForm.aspx.designer.cs">
       <DependentUpon>BusquedaForm.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ComprarForm.aspx.cs">
+      <DependentUpon>ComprarForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComprarForm.aspx.designer.cs">
+      <DependentUpon>ComprarForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -223,6 +241,7 @@
     </Compile>
     <Compile Include="Enums\EnumEstado.cs" />
     <Compile Include="Enums\EnumTipoPublicacion.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -246,6 +265,62 @@
     </Compile>
     <Compile Include="LoggedOut.Master.designer.cs">
       <DependentUpon>LoggedOut.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LoTengoForm.aspx.cs">
+      <DependentUpon>LoTengoForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoTengoForm.aspx.designer.cs">
+      <DependentUpon>LoTengoForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MiPerfilForm.aspx.cs">
+      <DependentUpon>MiPerfilForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MiPerfilForm.aspx.designer.cs">
+      <DependentUpon>MiPerfilForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisBusquedasForm.aspx.cs">
+      <DependentUpon>MisBusquedasForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisBusquedasForm.aspx.designer.cs">
+      <DependentUpon>MisBusquedasForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisComprasForm.aspx.cs">
+      <DependentUpon>MisComprasForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisComprasForm.aspx.designer.cs">
+      <DependentUpon>MisComprasForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisMensajesForm.aspx.cs">
+      <DependentUpon>MisMensajesForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisMensajesForm.aspx.designer.cs">
+      <DependentUpon>MisMensajesForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MisVentasForm.aspx.cs">
+      <DependentUpon>MisVentasForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MisVentasForm.aspx.designer.cs">
+      <DependentUpon>MisVentasForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OK.aspx.cs">
+      <DependentUpon>OK.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OK.aspx.designer.cs">
+      <DependentUpon>OK.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilForm.aspx.cs">
+      <DependentUpon>PerfilForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilForm.aspx.designer.cs">
+      <DependentUpon>PerfilForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PublicarVentaForm.aspx.cs">

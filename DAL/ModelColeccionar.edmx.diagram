@@ -15,7 +15,6 @@
         <EntityTypeShape EntityType="ColeccionarModel.publicacion" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ColeccionarModel.publicacionFoto" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ColeccionarModel.subCategoria" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
-        <EntityTypeShape EntityType="ColeccionarModel.tipoPago" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ColeccionarModel.venta" Width="1.5" PointX="9" PointY="13.625" IsExpanded="true" />
         <AssociationConnector Association="ColeccionarModel.FK_calificacion_venta" ManuallyRouted="false" />
         <AssociationConnector Association="ColeccionarModel.FK_publicacion_categoria" ManuallyRouted="false" />
@@ -29,7 +28,6 @@
         <AssociationConnector Association="ColeccionarModel.FK_publicacion_subCategoria" ManuallyRouted="false" />
         <AssociationConnector Association="ColeccionarModel.FK_publicacionFoto_publicacion" ManuallyRouted="false" />
         <AssociationConnector Association="ColeccionarModel.FK_venta_publicacion" ManuallyRouted="false" />
-        <AssociationConnector Association="ColeccionarModel.FK_venta_tipoPago" ManuallyRouted="false" />
         <EntityTypeShape EntityType="ColeccionarModel.avatar" Width="1.5" PointX="0.75" PointY="2" />
         <EntityTypeShape EntityType="ColeccionarModel.usuario" Width="1.5" PointX="5.25" PointY="6.75" />
         <AssociationConnector Association="ColeccionarModel.FK__usuario__ID_Avat__2EDAF651" />
@@ -41,6 +39,8 @@
         <AssociationConnector Association="ColeccionarModel.FK_usuario_provincia" />
         <AssociationConnector Association="ColeccionarModel.FK_venta_usuario" />
         <AssociationConnector Association="ColeccionarModel.FK_venta_usuario1" />
+        <EntityTypeShape EntityType="ColeccionarModel.tipoPago" Width="1.5" PointX="5.875" PointY="15.125" />
+        <AssociationConnector Association="ColeccionarModel.FK_venta_tipoPago" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

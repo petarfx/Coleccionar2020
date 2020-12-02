@@ -11,34 +11,25 @@ namespace Coleccionar
 {
 
 
-    public partial class BusquedaForm
+    public partial class MisComprasForm
     {
 
         /// <summary>
-        /// Control lblCantidad.
+        /// Control lblComprasRealizadas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCantidad;
+        protected global::System.Web.UI.WebControls.Label lblComprasRealizadas;
 
         /// <summary>
-        /// Control panelGrilla.
+        /// Control gvComprasPublicadas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl panelGrilla;
-
-        /// <summary>
-        /// Control gvPublicaciones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvPublicaciones;
+        protected global::System.Web.UI.WebControls.GridView gvComprasPublicadas;
     }
 }

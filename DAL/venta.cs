@@ -33,8 +33,8 @@ namespace DAL
         public virtual ICollection<calificacion> calificacion { get; set; }
         public virtual estado estado1 { get; set; }
         public virtual publicacion publicacion { get; set; }
-        public virtual tipoPago tipoPago { get; set; }
         public virtual usuario usuario { get; set; }
         public virtual usuario usuario1 { get; set; }
+        public virtual tipoPago tipoPago { get; set; }
     }
 }

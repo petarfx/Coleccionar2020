@@ -1,11 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LoggedIn.Master" AutoEventWireup="true" CodeBehind="PublicarVentaForm.aspx.cs" Inherits="Coleccionar.PublicarVentaForm" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/LoggedIn.Master" AutoEventWireup="true" CodeBehind="LoTengoForm.aspx.cs" Inherits="Coleccionar.LoTengoForm" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style type="text/css">
         .imagePreview {
             width: 90px; /*100%;*/
             height: 90px;
-            /*background-position: center center;
             background: url(http://cliquecities.com/assets/no-image-e3699ae23f866f6cbdf8ba2443ee5c4e.jpg);*/
             background-color: #fff;
             background-size: cover;
@@ -54,9 +52,7 @@
         }
     </style>
 
-
     <div class="row ">
-        <%--<div class=" col-lg-4 col-md-6 col-sm-8 col-lg-offset-4 col-md-offset-3 col-sm-offset-2">--%>
         <div class="col-lg-8 col-md-10 col-sm-12 col-lg-offset-2 col-md-offset-1">
             <div class="panel panel-info sombreado">
 
@@ -65,45 +61,6 @@
                         <asp:Label ID="lblTitulo" runat="server" Text="Publicar Producto"></asp:Label>
                     </div>
                 </div>
-
-
-
-                <%--<div class="row form-group">
-                    <div id="div_TipoDePublicacion" class="col-md-6" style="padding-top: 10px">
-                        <label class="control-label col-md-4">Tipo de Publiación</label>
-                        <div class="controls col-md-8 ">
-                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                <label class="btn btn-secondary active">
-                                    <input type="radio" name="options" id="opVenta" autocomplete="off" checked>
-                                    Venta
-                                </label>
-                                <label class="btn btn-secondary">
-                                    <input type="radio" name="options" id="opBusqueda" autocomplete="off">
-                                    Búsqueda
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="div_DescripcionTipoDePublicacion" class="col-md-6" style="padding-top: 10px">
-                    </div>
-                </div>--%>
-
-                <div class="row form-group">
-                    <div id="div_TipoDePublicacion" class="col-md-6" style="padding-top: 10px">
-                        <label class="control-label col-md-4">Tipo de Publiación</label>
-                        <div class="controls col-md-8 ">
-                            <asp:UpdatePanel ID="upTipoVenta" runat="server">
-                                <ContentTemplate>
-                                    <asp:Button ID="btnVenta" runat="server" Text="Venta" class="btn btn-success activeButton" CausesValidation="False" OnClick="btnVenta_Click" />
-                                    <asp:Button ID="btnBusqueda" runat="server" Text="Busqueda" class="btn btn-secondary inactiveButton" CausesValidation="False" OnClick="btnBusqueda_Click" />
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
-                        </div>
-                    </div>
-                    <div id="div_DescripcionTipoDePublicacion" class="col-md-6" style="padding-top: 10px">
-                    </div>
-                </div>
-
 
                 <div class="row form-group">
                     <div id="div_ddlCategoria" class="col-md-6" style="padding-top: 10px">
@@ -130,7 +87,6 @@
                         </div>
                     </div>
                 </div>
-
 
 
                 <div class="row form-group">
@@ -169,13 +125,6 @@
                         </div>
                     </div>
                 </div>
-
-                <%-- <div class="row form-group">
-                    <div class="col-md-12" style="padding-top: 10px">
-                        <asp:FileUpload ID="FileUpload1" runat="server" />
-                    </div>
-                </div>--%>
-
 
                 <div class="row form-group">
 
@@ -216,68 +165,6 @@
                         </label>
                     </div>
                 </div>
-
-
-
-
-
-                <%--ANDA BIEN Y LO ENCUENTRA CON FORM CONTROLS..--%>
-                <%--<div class="row form-group">
-                    <div class="col-md-12" style="padding-top: 10px">
-                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 imgUp">
-                            <div class="imagePreview"></div>
-                            <label class="btn btn-primary">
-                                Cargar<asp:FileUpload ID="FileUpload2" runat="server" class="uploadFile img" Style="width: 0px; height: 0px; overflow: hidden;" />
-                            </label>
-                        </div>
-                        <i class="fa fa-plus imgAdd"></i>
-                    </div>
-                </div>--%>
-
-
-                <%--ANDA BIEN ...............................................--%>
-                <%--<div class="row form-group">
-                    <div class="col-md-12" style="padding-top: 10px">
-                        <div class="col-xs-4 col-sm-3 col-md-2 col-lg-2 imgUp">
-                            <div class="imagePreview"></div>
-                            <label class="btn btn-primary">
-                                Cargar<input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px; height: 0px; overflow: hidden;">
-                            </label>
-                        </div>
-                        <i class="fa fa-plus imgAdd"></i>
-                    </div>
-                </div>--%>
-
-
-
-                <%--<div class="row form-group">
-                    <div class="col-md-12" style="padding-top: 10px">
-                        <div class="col-sm-4 col-md-3 col-lg-2 imgUp">
-                            <div class="row form-group">
-                                <div class="imagePreview"></div>
-                            </div>
-                            <div class="row form-group">
-                                <label class="btn btn-primary">
-                                    Cargar<input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px; height: 0px; overflow: hidden;">
-                                </label>
-                            </div>
-                        </div>
-                        <i class="fa fa-plus imgAdd"></i>
-                    </div>
-                </div>--%>
-
-
-
-                <%--<div class="col-sm-4 imgUp">
-                    <i class="fa fa-plus imgAdd"></i>
-                    <div class="imagePreview"></div>
-                    <label class="btn btn-primary">
-                        Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width: 0px; height: 0px; overflow: hidden;">
-                    </label>      
-                </div>--%>
-
-
-
 
                 <div class="form-group-12 col-lg-12 col-md-12 text-center">
                     <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" class="btn btn-primary" CausesValidation="False" OnClick="btnAceptar_Click" />

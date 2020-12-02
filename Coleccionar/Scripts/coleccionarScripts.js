@@ -44,3 +44,7 @@ function MuestraOcultaMensaje() {
 $(function () {
     $('#myCarousel').carousel();
 });
+
+function openLoTengoModal() {
+    $('#loTengoModal').modal('show');
+}

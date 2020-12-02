@@ -9,12 +9,22 @@ using DAL;
 using System.Data;
 using DAL;
 using Coleccionar.Wrappers;
+using Coleccionar.Enums;
+using System.Globalization;
 
 namespace Coleccionar
 {
     public partial class VerPublicacionForm : System.Web.UI.Page
     {
         ColeccionarEntities _ctx = new ColeccionarEntities();
+        void Page_PreInit(Object sender, EventArgs e)
+        {
+            setMasterPage();
+        }
+        private void setMasterPage()
+        {
+            this.MasterPageFile = !Common.VerificaSesionActiva() ? "~/LoggedOut.Master" : "~/LoggedIn.Master";
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,7 +46,17 @@ namespace Coleccionar
             lblTitulo.Text = publicacion.Nombre;
             lblDescripcion.Text = publicacion.Descripcion;
             lblCategoriaSubCategoria.Text = string.Format("{0}/{1}", publicacion.ID_Categoria_Descripcion, publicacion.ID_SubCategoria_Descripcion);
-            lblPrecio.Text = string.Format("$ {0}",publicacion.Precio.ToString());
+            //lblPrecio.Text = string.Format("$ {0}",publicacion.Precio.ToString());
+            lblPrecio.Text = publicacion.Precio.ToString("C", CultureInfo.CurrentCulture);
+            lblTipoPublicacion.Text = " - " + Helper.getTipoPublicacionById(publicacion.Tipo_Publicacion);
+            lblFecha.Text = Helper.getFechaPublicacion(publicacion.Fecha);
+
+            ViewState["TipoPublicacion"] = publicacion.Tipo_Publicacion;
+            if ((int)ViewState["TipoPublicacion"] == (int)EnumTipoPublicacion.Buscado)
+            {
+                btnComprar.Text = "¡LO TENGO!";
+                ViewState["ID_Publicacion"] = publicacion.ID_Publicacion;
+            }
         }
 
         private void getrptMain()
@@ -65,7 +85,7 @@ namespace Coleccionar
         {
             
             Views view = new Views();
-            int idPublicacion = 1;
+            int idPublicacion = Convert.ToInt32(Request.QueryString["id"]);
 
             List<publicacionFoto> pf = view.getPublicacionFotoById(idPublicacion);
 
@@ -80,6 +100,32 @@ namespace Coleccionar
             return dt;
         }
 
+        protected void btnComprar_Click(object sender, EventArgs e)
+        {
+            if ((int)ViewState["TipoPublicacion"] == (int)EnumTipoPublicacion.Venta)
+            {//Venta
+
+            }
+            else
+            {//¡Lo tengo!
+                lblLoTengoMsj.Text = string.Format("Felicitaciones! Eres el propietario de un objeto buscado! El siguiente paso es la creacion de la publicacion, la cual sera exclusiva para la persona interesada por una semana, de no concretarse la busqueda, la publicacion pasara a estado publica... Deseas continuar?");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "LaunchServerSide", "$(function() { openLoTengoModal(); });", true);
+            }
+        }
+
+
+        protected void btnLoTengo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filtro = ViewState["ID_Publicacion"].ToString();
+                Response.Redirect(string.Format("LoTengoForm.aspx?idpu={0}", filtro),false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
     }
 }
