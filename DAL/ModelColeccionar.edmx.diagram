@@ -35,12 +35,12 @@
         <AssociationConnector Association="ColeccionarModel.FK_usuario_provincia" />
         <AssociationConnector Association="ColeccionarModel.FK_venta_usuario" />
         <AssociationConnector Association="ColeccionarModel.FK_venta_usuario1" />
-        <EntityTypeShape EntityType="ColeccionarModel.mensajeria" Width="1.5" PointX="10.5" PointY="5.625" />
         <EntityTypeShape EntityType="ColeccionarModel.tipoPago" Width="1.5" PointX="6.75" PointY="14.625" />
+        <AssociationConnector Association="ColeccionarModel.FK_venta_tipoPago" />
+        <EntityTypeShape EntityType="ColeccionarModel.mensajeria" Width="1.5" PointX="10.5" PointY="5.625" />
         <AssociationConnector Association="ColeccionarModel.FK_mensajeria_publicacion" />
         <AssociationConnector Association="ColeccionarModel.FK_mensajeria_usuario" />
         <AssociationConnector Association="ColeccionarModel.FK_mensajeria_usuario1" />
-        <AssociationConnector Association="ColeccionarModel.FK_venta_tipoPago" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

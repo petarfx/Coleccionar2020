@@ -45,7 +45,7 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="Publicacion_Nombre" HeaderText="Publicación" />
-                            <asp:BoundField DataField="Fecha" HeaderText="Fecha" />
+                            <asp:BoundField DataField="Fecha" HeaderText="Fecha y Hora" />
                             <asp:TemplateField HeaderText="Notificacion" Visible="False">
                                 <EditItemTemplate>
                                     <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Notificacion") %>'></asp:TextBox>

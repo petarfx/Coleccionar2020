@@ -16,8 +16,8 @@ namespace Coleccionar
         private ColeccionarEntities _ctx = new ColeccionarEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!Common.VerificaSesionActiva())
-            //    Response.Redirect("IngresarForm.aspx");
+            if (!Common.VerificaSesionActiva())
+                Response.Redirect("IngresarForm.aspx");
 
             if (!Page.IsPostBack)
             {
@@ -128,7 +128,8 @@ namespace Coleccionar
 
 
             string tituloOK = "¡Felicitaciones!";
-            string mensajeOK = string.Format("¡Has realizado una compra! Recibiras el detalle de tu compra al correo electrónico {0}", ViewState["mail"].ToString());
+            //string mensajeOK = string.Format("¡Has realizado una compra! Recibiras el detalle de tu compra al correo electrónico {0}", ViewState["mail"].ToString());
+            string mensajeOK = string.Format("¡Has realizado una compra! Recibiras todos los datos brindados por el comprador en tu bandeja de entrada");
             Response.Redirect(string.Format("SuccessMessage.aspx?titulo={0}&mensaje={1}", tituloOK, mensajeOK));
         }
 

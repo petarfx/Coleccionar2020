@@ -173,6 +173,14 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="img\fondo1.jpg" />
+    <Content Include="img\fondo2.jpg" />
+    <Content Include="img\fondo3.jpg" />
+    <Content Include="img\fondo4.jpg" />
+    <Content Include="img\fondo5.jpg" />
+    <Content Include="img\im1.jpg" />
+    <Content Include="img\im2.jpg" />
+    <Content Include="img\im3.jpg" />
     <Content Include="LoggedOut.Master" />
     <Content Include="fonts\Wanted M54.ttf" />
     <Content Include="fonts\Wantedo.ttf" />

@@ -135,10 +135,6 @@ namespace DAL
             return query.ToList();
         }
 
-
-
-
-
         public static List<PublicacionesWrapper> getAllPublicacionesActivasPorEstado(int idTipoPub, int idUsuarioLogueado)
         {
             var query = from p in _ctx.publicacion
@@ -297,17 +293,6 @@ namespace DAL
             return query.FirstOrDefault();
         }
 
-
-
-
-
-
-
-
-
-
-
-
         public static PublicacionesWrapper getPublicacionDatosByIdUsuario(int idPub)
         {
             var query = from p in _ctx.publicacion
@@ -342,5 +327,118 @@ namespace DAL
 
             return query.FirstOrDefault();
         }
+
+
+
+        public static List<PublicacionesWrapper> getAllComprasPorIdUsuario(int idUsuarioLogueado)
+        {
+            var query = from p in _ctx.publicacion
+                        join c in _ctx.categoria
+                        on p.ID_Categoria equals c.ID_Categoria
+                        join s in _ctx.subCategoria
+                        on p.ID_SubCategoria equals s.ID_SubCategoria
+                        join e in _ctx.estado
+                        on p.Estado_Producto equals e.ID_Estado
+                        join v in _ctx.venta
+                        on p.ID_Publicacion equals v.ID_Publicacion
+                        let f = _ctx.publicacionFoto.Where(x => x.ID_Publicacion == p.ID_Publicacion).FirstOrDefault()
+                        where p.Estado_Publicacion == 10 && v.ID_Comprador == idUsuarioLogueado && p.Tipo_Publicacion == 1
+                        select new PublicacionesWrapper
+                        {
+                            ID_Publicacion = p.ID_Publicacion,
+                            Tipo_Publicacion = p.Tipo_Publicacion,
+                            ID_Categoria = p.ID_Categoria,
+                            ID_Categoria_Descripcion = c.Descripcion,
+                            ID_SubCategoria = p.ID_SubCategoria,
+                            ID_SubCategoria_Descripcion = s.Descripcion,
+                            Nombre = p.Nombre,
+                            Descripcion = p.Descripcion,
+                            Estado_Publicacion = p.Estado_Publicacion,
+                            ID_Usuario = p.ID_Usuario,
+                            Fecha = p.Fecha,
+                            Estado_Producto = p.Estado_Producto,
+                            Estado_Producto_Descripcion = e.Descripcion,
+                            Precio = p.Precio,
+                            Estado_Visibilidad = p.Estado_Visibilidad,
+                            Foto = f.Foto
+                        };
+
+            return query.ToList();
+        }
+
+
+        public static List<PublicacionesWrapper> getAllVentasPorIdUsuario(int idUsuarioLogueado)
+        {
+            var query = from p in _ctx.publicacion
+                        join c in _ctx.categoria
+                        on p.ID_Categoria equals c.ID_Categoria
+                        join s in _ctx.subCategoria
+                        on p.ID_SubCategoria equals s.ID_SubCategoria
+                        join e in _ctx.estado
+                        on p.Estado_Producto equals e.ID_Estado
+                        join v in _ctx.venta
+                        on p.ID_Publicacion equals v.ID_Publicacion
+                        let f = _ctx.publicacionFoto.Where(x => x.ID_Publicacion == p.ID_Publicacion).FirstOrDefault()
+                        where p.Estado_Publicacion == 10 && v.ID_Vendedor == idUsuarioLogueado
+                        select new PublicacionesWrapper
+                        {
+                            ID_Publicacion = p.ID_Publicacion,
+                            Tipo_Publicacion = p.Tipo_Publicacion,
+                            ID_Categoria = p.ID_Categoria,
+                            ID_Categoria_Descripcion = c.Descripcion,
+                            ID_SubCategoria = p.ID_SubCategoria,
+                            ID_SubCategoria_Descripcion = s.Descripcion,
+                            Nombre = p.Nombre,
+                            Descripcion = p.Descripcion,
+                            Estado_Publicacion = p.Estado_Publicacion,
+                            ID_Usuario = p.ID_Usuario,
+                            Fecha = p.Fecha,
+                            Estado_Producto = p.Estado_Producto,
+                            Estado_Producto_Descripcion = e.Descripcion,
+                            Precio = p.Precio,
+                            Estado_Visibilidad = p.Estado_Visibilidad,
+                            Foto = f.Foto
+                        };
+
+            return query.ToList();
+        }
+
+
+        public static List<PublicacionesWrapper> getAllBusquedasPorIdUsuario(int idUsuarioLogueado)
+        {
+            var query = from p in _ctx.publicacion
+                        join c in _ctx.categoria
+                        on p.ID_Categoria equals c.ID_Categoria
+                        join s in _ctx.subCategoria
+                        on p.ID_SubCategoria equals s.ID_SubCategoria
+                        join e in _ctx.estado
+                        on p.Estado_Producto equals e.ID_Estado                       
+                        let f = _ctx.publicacionFoto.Where(x => x.ID_Publicacion == p.ID_Publicacion).FirstOrDefault()
+                        where p.Estado_Publicacion == 1 && p.ID_Usuario == idUsuarioLogueado
+                        && p.Tipo_Publicacion == 2
+                        select new PublicacionesWrapper
+                        {
+                            ID_Publicacion = p.ID_Publicacion,
+                            Tipo_Publicacion = p.Tipo_Publicacion,
+                            ID_Categoria = p.ID_Categoria,
+                            ID_Categoria_Descripcion = c.Descripcion,
+                            ID_SubCategoria = p.ID_SubCategoria,
+                            ID_SubCategoria_Descripcion = s.Descripcion,
+                            Nombre = p.Nombre,
+                            Descripcion = p.Descripcion,
+                            Estado_Publicacion = p.Estado_Publicacion,
+                            ID_Usuario = p.ID_Usuario,
+                            Fecha = p.Fecha,
+                            Estado_Producto = p.Estado_Producto,
+                            Estado_Producto_Descripcion = e.Descripcion,
+                            Precio = p.Precio,
+                            Estado_Visibilidad = p.Estado_Visibilidad,
+                            Foto = f.Foto
+                        };
+
+            return query.ToList();
+        }
+
+
     }
 }

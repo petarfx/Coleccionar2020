@@ -53,6 +53,22 @@ namespace Coleccionar
             objm.Leido = false;
             _ctx.mensajeria.Add(objm);
             _ctx.SaveChanges();
+
+            txtMensajeCuerpo.Text = string.Empty;
+            MensajeEnviadoOk();
+        }
+
+        private void MensajeEnviadoOk()
+        {
+            lblmsjTitulo.Text = "Mensaje Publicado ";
+            lblmsjCuerpo.Text = "Mensaje enviado correctamente.";
+            divMensaje.Attributes["class"] = "showhide col-lg-10 col-lg-offset-1 alert-dismissible alert alert-success";
+            ClientScript.RegisterStartupScript(GetType(), "mensajeshowhide", "MuestraOcultaMensaje();", true);
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
         }
     }
 }

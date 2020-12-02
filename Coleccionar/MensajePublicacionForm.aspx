@@ -46,7 +46,7 @@
                 <div class="row form-group">
                     <div class="form-group-12 col-lg-12 col-md-12 text-center">                   
                         <asp:Button ID="btnEnviar" runat="server" Text="Enviar" class="btn btn-primary" CausesValidation="true" OnClick="btnEnviar_Click" />
-                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-primary" CausesValidation="false" />
+                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" class="btn btn-primary" CausesValidation="false" OnClick="btnCancelar_Click" />
                     </div>
 
                     <div class="row">

@@ -140,6 +140,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tipoPago">
+      <EntityTypeMapping TypeName="ColeccionarModel.tipoPago">
+        <MappingFragment StoreEntitySet="tipoPago">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="ID_TipoPago" ColumnName="ID_TipoPago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="mensajeria">
       <EntityTypeMapping TypeName="ColeccionarModel.mensajeria">
         <MappingFragment StoreEntitySet="mensajeria">
@@ -151,14 +159,6 @@
           <ScalarProperty Name="ID_Destinatario" ColumnName="ID_Destinatario" />
           <ScalarProperty Name="ID_Remitente" ColumnName="ID_Remitente" />
           <ScalarProperty Name="ID_Mensaje" ColumnName="ID_Mensaje" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="tipoPago">
-      <EntityTypeMapping TypeName="ColeccionarModel.tipoPago">
-        <MappingFragment StoreEntitySet="tipoPago">
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-          <ScalarProperty Name="ID_TipoPago" ColumnName="ID_TipoPago" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

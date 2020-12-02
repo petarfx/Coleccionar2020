@@ -34,6 +34,7 @@ namespace Coleccionar
             txtTitulo.Text = pub.Nombre;
             txtPrecio.Text = pub.Precio.ToString();
             ViewState["idUserPubOrig"] = pub.ID_Usuario;
+            ViewState["NombrePub"] = pub.Nombre;
         }
 
         private void CargarCategoria()
@@ -121,6 +122,20 @@ namespace Coleccionar
                             }
                         }
                     }
+
+                    //Enviar Mensaje
+                    mensajeria msj = new mensajeria();
+                    msj.ID_Publicacion = Convert.ToInt32(Request.QueryString["idpu"]);
+                    msj.ID_Remitente = Convert.ToInt32(Session["ID"]);
+                    msj.ID_Destinatario = Convert.ToInt32(ViewState["idUserPubOrig"]);
+                    msj.Descripcion = string.Format("¡Encontraron tu producto!!, El producto {0} fue encontrado por {1}, tendrás una semana de exclusividad sobre esa publicación, de no concretarse la compra, la misma pasará a estado publica.", ViewState["NombrePub"].ToString(), Session["Nombre"].ToString());
+                    msj.Fecha = DateTime.Now;
+                    msj.Notificacion = true;
+                    msj.Leido = false;
+                    _ctx.mensajeria.Add(msj);
+                    _ctx.SaveChanges();
+
+                    Response.Redirect("Default.aspx");
                 }
                 else
                 {

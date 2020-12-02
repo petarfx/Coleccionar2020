@@ -61,7 +61,7 @@
           <Property Name="ID_Remitente" Type="int" Nullable="false" />
           <Property Name="ID_Destinatario" Type="int" Nullable="false" />
           <Property Name="ID_Publicacion" Type="int" Nullable="false" />
-          <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="Fecha" Type="datetime" Nullable="false" />
           <Property Name="Notificacion" Type="bit" Nullable="false" />
           <Property Name="Leido" Type="bit" Nullable="false" />
@@ -864,8 +864,12 @@
             <End Role="usuario" EntitySet="usuario" />
             <End Role="venta" EntitySet="venta" />
           </AssociationSet>
-          <EntitySet Name="mensajeria" EntityType="ColeccionarModel.mensajeria" />
           <EntitySet Name="tipoPago" EntityType="ColeccionarModel.tipoPago" />
+          <AssociationSet Name="FK_venta_tipoPago" Association="ColeccionarModel.FK_venta_tipoPago">
+            <End Role="tipoPago" EntitySet="tipoPago" />
+            <End Role="venta" EntitySet="venta" />
+          </AssociationSet>
+          <EntitySet Name="mensajeria" EntityType="ColeccionarModel.mensajeria" />
           <AssociationSet Name="FK_mensajeria_publicacion" Association="ColeccionarModel.FK_mensajeria_publicacion">
             <End Role="publicacion" EntitySet="publicacion" />
             <End Role="mensajeria" EntitySet="mensajeria" />
@@ -877,10 +881,6 @@
           <AssociationSet Name="FK_mensajeria_usuario1" Association="ColeccionarModel.FK_mensajeria_usuario1">
             <End Role="usuario" EntitySet="usuario" />
             <End Role="mensajeria" EntitySet="mensajeria" />
-          </AssociationSet>
-          <AssociationSet Name="FK_venta_tipoPago" Association="ColeccionarModel.FK_venta_tipoPago">
-            <End Role="tipoPago" EntitySet="tipoPago" />
-            <End Role="venta" EntitySet="venta" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="avatar">
@@ -926,7 +926,7 @@
           <NavigationProperty Name="venta1" Relationship="ColeccionarModel.FK_venta_usuario1" FromRole="usuario" ToRole="venta" />
           <NavigationProperty Name="mensajeria" Relationship="ColeccionarModel.FK_mensajeria_usuario" FromRole="usuario" ToRole="mensajeria" />
           <NavigationProperty Name="mensajeria1" Relationship="ColeccionarModel.FK_mensajeria_usuario1" FromRole="usuario" ToRole="mensajeria" />
-        </EntityType>
+          </EntityType>
         <Association Name="FK__usuario__ID_Avat__2EDAF651">
           <End Type="ColeccionarModel.avatar" Role="avatar" Multiplicity="1" />
           <End Type="ColeccionarModel.usuario" Role="usuario" Multiplicity="*" />
@@ -1011,6 +1011,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tipoPago">
+          <Key>
+            <PropertyRef Name="ID_TipoPago" />
+          </Key>
+          <Property Name="ID_TipoPago" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="venta" Relationship="ColeccionarModel.FK_venta_tipoPago" FromRole="tipoPago" ToRole="venta" />
+        </EntityType>
+        <Association Name="FK_venta_tipoPago">
+          <End Type="ColeccionarModel.tipoPago" Role="tipoPago" Multiplicity="1" />
+          <End Type="ColeccionarModel.venta" Role="venta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoPago">
+              <PropertyRef Name="ID_TipoPago" />
+            </Principal>
+            <Dependent Role="venta">
+              <PropertyRef Name="ID_TipoPago" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="mensajeria">
           <Key>
             <PropertyRef Name="ID_Mensaje" />
@@ -1019,21 +1039,13 @@
           <Property Name="ID_Remitente" Type="Int32" Nullable="false" />
           <Property Name="ID_Destinatario" Type="Int32" Nullable="false" />
           <Property Name="ID_Publicacion" Type="Int32" Nullable="false" />
-          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Notificacion" Type="Boolean" Nullable="false" />
           <Property Name="Leido" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="publicacion" Relationship="ColeccionarModel.FK_mensajeria_publicacion" FromRole="mensajeria" ToRole="publicacion" />
           <NavigationProperty Name="usuario" Relationship="ColeccionarModel.FK_mensajeria_usuario" FromRole="mensajeria" ToRole="usuario" />
           <NavigationProperty Name="usuario1" Relationship="ColeccionarModel.FK_mensajeria_usuario1" FromRole="mensajeria" ToRole="usuario" />
-        </EntityType>
-        <EntityType Name="tipoPago">
-          <Key>
-            <PropertyRef Name="ID_TipoPago" />
-          </Key>
-          <Property Name="ID_TipoPago" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Descripcion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="venta" Relationship="ColeccionarModel.FK_venta_tipoPago" FromRole="tipoPago" ToRole="venta" />
         </EntityType>
         <Association Name="FK_mensajeria_publicacion">
           <End Type="ColeccionarModel.publicacion" Role="publicacion" Multiplicity="1" />
@@ -1068,18 +1080,6 @@
             </Principal>
             <Dependent Role="mensajeria">
               <PropertyRef Name="ID_Destinatario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_venta_tipoPago">
-          <End Type="ColeccionarModel.tipoPago" Role="tipoPago" Multiplicity="1" />
-          <End Type="ColeccionarModel.venta" Role="venta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tipoPago">
-              <PropertyRef Name="ID_TipoPago" />
-            </Principal>
-            <Dependent Role="venta">
-              <PropertyRef Name="ID_TipoPago" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1228,6 +1228,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tipoPago">
+            <EntityTypeMapping TypeName="ColeccionarModel.tipoPago">
+              <MappingFragment StoreEntitySet="tipoPago">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="ID_TipoPago" ColumnName="ID_TipoPago" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="mensajeria">
             <EntityTypeMapping TypeName="ColeccionarModel.mensajeria">
               <MappingFragment StoreEntitySet="mensajeria">
@@ -1239,14 +1247,6 @@
                 <ScalarProperty Name="ID_Destinatario" ColumnName="ID_Destinatario" />
                 <ScalarProperty Name="ID_Remitente" ColumnName="ID_Remitente" />
                 <ScalarProperty Name="ID_Mensaje" ColumnName="ID_Mensaje" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tipoPago">
-            <EntityTypeMapping TypeName="ColeccionarModel.tipoPago">
-              <MappingFragment StoreEntitySet="tipoPago">
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="ID_TipoPago" ColumnName="ID_TipoPago" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

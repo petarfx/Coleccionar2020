@@ -37,7 +37,7 @@ namespace DAL
         public virtual DbSet<venta> venta { get; set; }
         public virtual DbSet<avatar> avatar { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
-        public virtual DbSet<mensajeria> mensajeria { get; set; }
         public virtual DbSet<tipoPago> tipoPago { get; set; }
+        public virtual DbSet<mensajeria> mensajeria { get; set; }
     }
 }
