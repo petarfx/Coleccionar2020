@@ -114,6 +114,7 @@
       <DependentUpon>ModelColeccionar.tt</DependentUpon>
     </Compile>
     <Compile Include="Views.cs" />
+    <Compile Include="Wrappers\MensajesWrapper.cs" />
     <Compile Include="Wrappers\PublicacionesWrapper.cs" />
   </ItemGroup>
   <ItemGroup>

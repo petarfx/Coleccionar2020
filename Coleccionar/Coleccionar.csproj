@@ -182,6 +182,8 @@
     <Content Include="img\logoLoro.png" />
     <Content Include="IngresarForm.aspx" />
     <Content Include="LoTengoForm.aspx" />
+    <Content Include="Mensaje.aspx" />
+    <Content Include="MensajePublicacionForm.aspx" />
     <Content Include="MiPerfilForm.aspx" />
     <Content Include="MisBusquedasForm.aspx" />
     <Content Include="MisComprasForm.aspx" />
@@ -285,6 +287,20 @@
     </Compile>
     <Compile Include="LoTengoForm.aspx.designer.cs">
       <DependentUpon>LoTengoForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mensaje.aspx.cs">
+      <DependentUpon>Mensaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mensaje.aspx.designer.cs">
+      <DependentUpon>Mensaje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MensajePublicacionForm.aspx.cs">
+      <DependentUpon>MensajePublicacionForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MensajePublicacionForm.aspx.designer.cs">
+      <DependentUpon>MensajePublicacionForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="MiPerfilForm.aspx.cs">
       <DependentUpon>MiPerfilForm.aspx</DependentUpon>

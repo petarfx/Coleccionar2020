@@ -127,5 +127,9 @@ namespace Coleccionar
             }
         }
 
+        protected void btnPreguntar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(string.Format("MensajePublicacionForm.aspx?id={0}", Request.QueryString["id"].ToString()));
+        }
     }
 }

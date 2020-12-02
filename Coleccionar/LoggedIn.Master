@@ -62,10 +62,13 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-4 col-sm-3 col-xs-4" style="text-align:right">
-                                    <asp:Label ID="lblInfoUser" runat="server" Text="lblInfoUser" Visible="false"  ></asp:Label>
+                                <div class="col-lg-3 col-md-4 col-sm-3 col-xs-4" style="text-align: right">
+                                    <asp:Label ID="lblInfoUser" runat="server" Text="lblInfoUser" Visible="false"></asp:Label>
                                     <asp:LinkButton runat="server" ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" CssClass="btn btn-info btn-xs" Visible="false" CausesValidation="false">
                                         <i class="glyphicon glyphicon-log-out" aria-hidden="true"></i>Cerrar Sesión
+                                    </asp:LinkButton>
+                                    <asp:LinkButton ID="btnMensajes" runat="server"  CssClass="btn btn-info btn-xs" Text="0" CausesValidation="false" OnClick="btnMensajes_Click">
+                                        <i class="glyphicon glyphicon-bell" aria-hidden="true"></i><asp:Label ID="lblMsj" runat="server" Text="0" Visible="true"></asp:Label>
                                     </asp:LinkButton>
                                 </div>
                             </div>
@@ -79,13 +82,13 @@
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
                                     </button>
-                                <a class="navbar-brand" href="Default">Inicio</a>
+                                    <a class="navbar-brand" href="Default">Inicio</a>
                                 </div>
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                    <ul class="nav navbar-nav">                                        
+                                    <ul class="nav navbar-nav">
                                         <li><a href="BusquedaForm?tipopub=1" class="menuEnVenta">En Venta</a></li>
-                                        <li><a href="BusquedaForm?tipopub=2" class="menuBuscados">Buscados</a></li> 
-                                        <li><a href="PublicarVentaForm" >Publicar</a></li> 
+                                        <li><a href="BusquedaForm?tipopub=2" class="menuBuscados">Buscados</a></li>
+                                        <li><a href="PublicarVentaForm">Publicar</a></li>
                                         <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mi Cuenta <span class="caret"></span></a>
                                             <ul class="dropdown-menu">

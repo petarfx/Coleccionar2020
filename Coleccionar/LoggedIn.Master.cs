@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.Security;
 using System.Web.UI;
+using DAL;
 
 namespace Coleccionar
 {
@@ -15,10 +16,13 @@ namespace Coleccionar
                     SetearValoresDeSesion();
                 }
             }
+            int cantMsj = Views.getCantUnreadedMessagesByUser(Convert.ToInt32(Session["ID"]));
+            lblMsj.Text = " " + cantMsj.ToString();
+            btnMensajes.CssClass = cantMsj == 0 ? "btn btn-info btn-xs" : "btn btn-warning btn-xs";
         }
 
         #region Private Methods
-        
+
         private void SetearValoresDeSesion()
         {
             lblInfoUser.Text = String.Format("Bienvenido, {0}", Session["Nombre"].ToString());
@@ -50,5 +54,10 @@ namespace Coleccionar
         }
 
         #endregion
+
+        protected void btnMensajes_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MisMensajesForm.aspx");
+        }
     }
 }

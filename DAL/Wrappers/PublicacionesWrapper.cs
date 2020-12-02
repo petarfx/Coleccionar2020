@@ -24,5 +24,8 @@ namespace Coleccionar.Wrappers
         public double Precio { get; set; }
         public int? Estado_Visibilidad { get; set; }
         public string Foto { get; set; }
+
+        public string UsuarioNombre { get; set; }
+        public string UsuarioAlias { get; set; }
     }
 }

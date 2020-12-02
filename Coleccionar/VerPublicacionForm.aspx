@@ -75,7 +75,7 @@
         </div>
         <div class="row espacioDown espacioTop">
             <div class="col-md-10 col-md-offset-1">
-                <asp:Button ID="btnPreguntar" runat="server" Text="Preguntar" CssClass="btn btn-success" Style="width: 100%" />
+                <asp:Button ID="btnPreguntar" runat="server" Text="Preguntar" CssClass="btn btn-success" Style="width: 100%" OnClick="btnPreguntar_Click" />
             </div>
         </div>
         <div class="row espacioDown">
