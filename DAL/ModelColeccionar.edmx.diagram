@@ -10,7 +10,6 @@
         <EntityTypeShape EntityType="ColeccionarModel.encontrado" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ColeccionarModel.estado" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ColeccionarModel.localidad" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ColeccionarModel.mensajeria" Width="1.5" PointX="10.5" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ColeccionarModel.provincia" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ColeccionarModel.publicacion" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ColeccionarModel.publicacionFoto" Width="1.5" PointX="7.5" PointY="3.75" IsExpanded="true" />
@@ -24,7 +23,6 @@
         <AssociationConnector Association="ColeccionarModel.FK_publicacion_estado1" ManuallyRouted="false" />
         <AssociationConnector Association="ColeccionarModel.FK_venta_estado" ManuallyRouted="false" />
         <AssociationConnector Association="ColeccionarModel.FK_localidad_provincia" ManuallyRouted="false" />
-        <AssociationConnector Association="ColeccionarModel.FK_mensajeria_publicacion" ManuallyRouted="false" />
         <AssociationConnector Association="ColeccionarModel.FK_publicacion_subCategoria" ManuallyRouted="false" />
         <AssociationConnector Association="ColeccionarModel.FK_publicacionFoto_publicacion" ManuallyRouted="false" />
         <AssociationConnector Association="ColeccionarModel.FK_venta_publicacion" ManuallyRouted="false" />
@@ -34,12 +32,14 @@
         <AssociationConnector Association="ColeccionarModel.FK_calificacion_usuario" />
         <AssociationConnector Association="ColeccionarModel.FK_encontrado_usuario" />
         <AssociationConnector Association="ColeccionarModel.FK_usuario_localidad" />
-        <AssociationConnector Association="ColeccionarModel.FK_mensajeria_usuario" />
-        <AssociationConnector Association="ColeccionarModel.FK_mensajeria_usuario1" />
         <AssociationConnector Association="ColeccionarModel.FK_usuario_provincia" />
         <AssociationConnector Association="ColeccionarModel.FK_venta_usuario" />
         <AssociationConnector Association="ColeccionarModel.FK_venta_usuario1" />
-        <EntityTypeShape EntityType="ColeccionarModel.tipoPago" Width="1.5" PointX="5.875" PointY="15.125" />
+        <EntityTypeShape EntityType="ColeccionarModel.mensajeria" Width="1.5" PointX="10.5" PointY="5.625" />
+        <EntityTypeShape EntityType="ColeccionarModel.tipoPago" Width="1.5" PointX="6.75" PointY="14.625" />
+        <AssociationConnector Association="ColeccionarModel.FK_mensajeria_publicacion" />
+        <AssociationConnector Association="ColeccionarModel.FK_mensajeria_usuario" />
+        <AssociationConnector Association="ColeccionarModel.FK_mensajeria_usuario1" />
         <AssociationConnector Association="ColeccionarModel.FK_venta_tipoPago" />
         </Diagram>
     </edmx:Diagrams>

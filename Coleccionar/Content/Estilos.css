@@ -8,8 +8,17 @@
     src: url('../fonts/Wantedo.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'klavika';
+    src: url('../fonts/klavika.otf') format('opentype');
+}
+
 .amplio {
     width: 100%;
+}
+
+.btnFace {
+    font-family: 'klavika' !important;
 }
 
 .centrado {

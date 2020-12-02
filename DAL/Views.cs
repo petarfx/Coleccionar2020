@@ -173,5 +173,40 @@ namespace DAL
             return query.ToList();
         }
 
+
+        public static PublicacionesWrapper getPublicacionYFotoByIdUsuario(int idPub)
+        {
+            var query = from p in _ctx.publicacion
+                        join c in _ctx.categoria
+                        on p.ID_Categoria equals c.ID_Categoria
+                        join s in _ctx.subCategoria
+                        on p.ID_SubCategoria equals s.ID_SubCategoria
+                        join e in _ctx.estado
+                        on p.Estado_Producto equals e.ID_Estado
+                        let f = _ctx.publicacionFoto.Where(x => x.ID_Publicacion == p.ID_Publicacion).FirstOrDefault()
+                        where p.ID_Publicacion == idPub
+                        select new PublicacionesWrapper
+                        {
+                            ID_Publicacion = p.ID_Publicacion,
+                            Tipo_Publicacion = p.Tipo_Publicacion,
+                            ID_Categoria = p.ID_Categoria,
+                            ID_Categoria_Descripcion = c.Descripcion,
+                            ID_SubCategoria = p.ID_SubCategoria,
+                            ID_SubCategoria_Descripcion = s.Descripcion,
+                            Nombre = p.Nombre,
+                            Descripcion = p.Descripcion,
+                            Estado_Publicacion = p.Estado_Publicacion,
+                            ID_Usuario = p.ID_Usuario,
+                            Fecha = p.Fecha,
+                            Estado_Producto = p.Estado_Producto,
+                            Estado_Producto_Descripcion = e.Descripcion,
+                            Precio = p.Precio,
+                            Estado_Visibilidad = p.Estado_Visibilidad,
+                            Foto = f.Foto
+                        };
+
+            return query.FirstOrDefault();
+        }
+
     }
 }

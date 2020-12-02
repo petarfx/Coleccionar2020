@@ -18,9 +18,9 @@ namespace DAL
         public publicacion()
         {
             this.encontrado = new HashSet<encontrado>();
-            this.mensajeria = new HashSet<mensajeria>();
             this.publicacionFoto = new HashSet<publicacionFoto>();
             this.venta = new HashSet<venta>();
+            this.mensajeria = new HashSet<mensajeria>();
         }
     
         public int ID_Publicacion { get; set; }
@@ -41,12 +41,12 @@ namespace DAL
         public virtual ICollection<encontrado> encontrado { get; set; }
         public virtual estado estado { get; set; }
         public virtual estado estado1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<mensajeria> mensajeria { get; set; }
         public virtual subCategoria subCategoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<publicacionFoto> publicacionFoto { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<venta> venta { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<mensajeria> mensajeria { get; set; }
     }
 }

@@ -20,6 +20,8 @@ namespace DAL
         public int ID_Publicacion { get; set; }
         public string Descripcion { get; set; }
         public System.DateTime Fecha { get; set; }
+        public bool Notificacion { get; set; }
+        public bool Leido { get; set; }
     
         public virtual publicacion publicacion { get; set; }
         public virtual usuario usuario { get; set; }

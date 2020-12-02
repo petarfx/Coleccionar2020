@@ -19,10 +19,10 @@ namespace DAL
         {
             this.calificacion = new HashSet<calificacion>();
             this.encontrado = new HashSet<encontrado>();
-            this.mensajeria = new HashSet<mensajeria>();
-            this.mensajeria1 = new HashSet<mensajeria>();
             this.venta = new HashSet<venta>();
             this.venta1 = new HashSet<venta>();
+            this.mensajeria = new HashSet<mensajeria>();
+            this.mensajeria1 = new HashSet<mensajeria>();
         }
     
         public int ID_Usuario { get; set; }
@@ -53,14 +53,14 @@ namespace DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<encontrado> encontrado { get; set; }
         public virtual localidad localidad { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<mensajeria> mensajeria { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<mensajeria> mensajeria1 { get; set; }
         public virtual provincia provincia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<venta> venta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<venta> venta1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<mensajeria> mensajeria { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<mensajeria> mensajeria1 { get; set; }
     }
 }

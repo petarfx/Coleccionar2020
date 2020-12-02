@@ -30,7 +30,6 @@ namespace DAL
         public virtual DbSet<encontrado> encontrado { get; set; }
         public virtual DbSet<estado> estado { get; set; }
         public virtual DbSet<localidad> localidad { get; set; }
-        public virtual DbSet<mensajeria> mensajeria { get; set; }
         public virtual DbSet<provincia> provincia { get; set; }
         public virtual DbSet<publicacion> publicacion { get; set; }
         public virtual DbSet<publicacionFoto> publicacionFoto { get; set; }
@@ -38,6 +37,7 @@ namespace DAL
         public virtual DbSet<venta> venta { get; set; }
         public virtual DbSet<avatar> avatar { get; set; }
         public virtual DbSet<usuario> usuario { get; set; }
+        public virtual DbSet<mensajeria> mensajeria { get; set; }
         public virtual DbSet<tipoPago> tipoPago { get; set; }
     }
 }

@@ -41,11 +41,11 @@ namespace Coleccionar
         private void cargarDatosPublicacion(int idPub)
         {
             Views view = new Views();
-            PublicacionesWrapper publicacion =  view.getPublicacionById(idPub);
+            PublicacionesWrapper publicacion = view.getPublicacionById(idPub);
             lblEstadoProducto.Text = publicacion.Estado_Producto_Descripcion;
             lblTitulo.Text = publicacion.Nombre;
             lblDescripcion.Text = publicacion.Descripcion;
-            lblCategoriaSubCategoria.Text = string.Format("{0}/{1}", publicacion.ID_Categoria_Descripcion, publicacion.ID_SubCategoria_Descripcion);
+            lblCategoriaSubCategoria.Text = string.Format("{0} / {1}", publicacion.ID_Categoria_Descripcion, publicacion.ID_SubCategoria_Descripcion);
             //lblPrecio.Text = string.Format("$ {0}",publicacion.Precio.ToString());
             lblPrecio.Text = publicacion.Precio.ToString("C", CultureInfo.CurrentCulture);
             lblTipoPublicacion.Text = " - " + Helper.getTipoPublicacionById(publicacion.Tipo_Publicacion);
@@ -83,7 +83,7 @@ namespace Coleccionar
 
         private DataTable GetData()
         {
-            
+
             Views view = new Views();
             int idPublicacion = Convert.ToInt32(Request.QueryString["id"]);
 
@@ -104,7 +104,7 @@ namespace Coleccionar
         {
             if ((int)ViewState["TipoPublicacion"] == (int)EnumTipoPublicacion.Venta)
             {//Venta
-
+                Response.Redirect(string.Format("ComprarForm.aspx?idpu={0}", Request.QueryString["id"].ToString(), false));
             }
             else
             {//¡Lo tengo!
@@ -119,7 +119,7 @@ namespace Coleccionar
             try
             {
                 string filtro = ViewState["ID_Publicacion"].ToString();
-                Response.Redirect(string.Format("LoTengoForm.aspx?idpu={0}", filtro),false);
+                Response.Redirect(string.Format("LoTengoForm.aspx?idpu={0}", filtro), false);
             }
             catch (Exception ex)
             {

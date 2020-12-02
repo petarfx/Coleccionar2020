@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="col-lg-3 col-md-4 col-sm-3 col-xs-4" style="text-align:right">
                                     <asp:Label ID="lblInfoUser" runat="server" Text="lblInfoUser" Visible="false"  ></asp:Label>
-                                    <asp:LinkButton runat="server" ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" CssClass="btn btn-info btn-xs" Visible="false">
+                                    <asp:LinkButton runat="server" ID="btnCerrarSesion" OnClick="btnCerrarSesion_Click" CssClass="btn btn-info btn-xs" Visible="false" CausesValidation="false">
                                         <i class="glyphicon glyphicon-log-out" aria-hidden="true"></i>Cerrar Sesión
                                     </asp:LinkButton>
                                 </div>

@@ -46,18 +46,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="mensajeria">
-      <EntityTypeMapping TypeName="ColeccionarModel.mensajeria">
-        <MappingFragment StoreEntitySet="mensajeria">
-          <ScalarProperty Name="ID_Mensaje" ColumnName="ID_Mensaje" />
-          <ScalarProperty Name="ID_Remitente" ColumnName="ID_Remitente" />
-          <ScalarProperty Name="ID_Destinatario" ColumnName="ID_Destinatario" />
-          <ScalarProperty Name="ID_Publicacion" ColumnName="ID_Publicacion" />
-          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="provincia">
       <EntityTypeMapping TypeName="ColeccionarModel.provincia">
         <MappingFragment StoreEntitySet="provincia">
@@ -149,6 +137,20 @@
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Apellido" ColumnName="Apellido" />
           <ScalarProperty Name="ID_Usuario" ColumnName="ID_Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mensajeria">
+      <EntityTypeMapping TypeName="ColeccionarModel.mensajeria">
+        <MappingFragment StoreEntitySet="mensajeria">
+          <ScalarProperty Name="Leido" ColumnName="Leido" />
+          <ScalarProperty Name="Notificacion" ColumnName="Notificacion" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="ID_Publicacion" ColumnName="ID_Publicacion" />
+          <ScalarProperty Name="ID_Destinatario" ColumnName="ID_Destinatario" />
+          <ScalarProperty Name="ID_Remitente" ColumnName="ID_Remitente" />
+          <ScalarProperty Name="ID_Mensaje" ColumnName="ID_Mensaje" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
